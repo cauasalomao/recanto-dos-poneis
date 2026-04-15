@@ -361,8 +361,14 @@ footer { background:var(--text); color:rgba(255,255,255,.8); padding:clamp(4rem,
   .ct-form .fg-row { grid-template-columns:1fr; }
 }
 @media(max-width:480px){
+  html { zoom:1; }
+  .hero { height:100vh; }
   .rp-g { grid-template-columns:1fr; }
-  .exp-cards { grid-template-columns:1fr; }
+  .exp-cards { grid-template-columns:1fr 1fr; gap:1rem; }
+  .exp-card-img { aspect-ratio:1/1; }
+  .exp-card-body h3 { font-size:1rem; }
+  .exp-card-body p { font-size:.88rem; }
+  .exp-card-link { font-size:.85rem; }
   .strip-g { grid-template-columns:1fr; }
   .hero-ctas { flex-direction:column; align-items:center; }
   .hero-title { font-size:clamp(3.5rem,15vw,6rem); }
