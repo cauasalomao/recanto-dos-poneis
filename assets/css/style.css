@@ -154,6 +154,11 @@ img.loaded { opacity:1; }
 .badges { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.4rem; }
 .badge { display:inline-block; padding:.3rem .85rem; border:1px solid var(--border); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700; }
 
+/* ── CTA HERO ── */
+.cta-hero { position:relative; overflow:hidden; padding:clamp(5rem,10vw,8rem) 0; }
+.cta-hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.cta-hero-ov { position:absolute; inset:0; background:rgba(0,0,0,.55); }
+
 /* ── EXPERIÊNCIAS PREVIEW ── */
 .exp-section { background:#1a4922; }
 .exp-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:clamp(2rem,4vw,3rem); }
