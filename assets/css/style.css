@@ -33,7 +33,7 @@ button { cursor: pointer; }
   --border:       rgba(91,122,61,.13);
   --shadow:       0 4px 24px rgba(0,0,0,.07);
   --shadow-lg:    0 12px 48px rgba(0,0,0,.13);
-  --hero-overlay: linear-gradient(to bottom,rgba(35,37,22,.28) 0%,rgba(35,37,22,.05) 40%,rgba(35,37,22,.58) 100%);
+  --hero-overlay: linear-gradient(to bottom,rgba(20,24,14,.6) 0%,rgba(20,24,14,.65) 40%,rgba(20,24,14,.85) 100%);
   --font-display: 'Pinyon Script', cursive;
   --font-body:    'Raleway', sans-serif;
   --space-xs: clamp(.5rem,1vw,.75rem);
