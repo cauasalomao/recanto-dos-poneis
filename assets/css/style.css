@@ -648,20 +648,25 @@ footer { background:var(--text); color:rgba(255,255,255,.8); padding:clamp(4rem,
 
 /* ── Blog CTA Box (inside post) ── */
 .blog-cta-box {
-  background: var(--accent-soft);
-  border: 1px solid var(--border);
-  padding: 2rem;
+  background: var(--accent);
+  padding: 2.5rem;
   margin: 3rem 0 2rem;
   text-align: center;
+  border-radius: 8px;
 }
 .blog-cta-box h3 {
   font-family: var(--font-body);
   margin: 0 0 .5rem;
-  color: var(--accent);
+  color: #fff;
 }
 .blog-cta-box p {
   text-align: center;
   margin: 0 auto 1.2rem;
+  color: rgba(255,255,255,.8);
+}
+.blog-cta-box .btn-green {
+  background: #fff;
+  color: var(--accent);
 }
 
 /* ── Blog Responsive ── */
