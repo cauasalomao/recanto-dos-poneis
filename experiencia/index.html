@@ -80,10 +80,10 @@
 .sec-green .txt-item p { color:rgba(255,255,255,.8); }
 
 /* ── SEÇÃO FUNDO COM FOTO ── */
-.sec-photo { position:relative; background-size:cover; background-position:center; background-repeat:no-repeat; background-attachment:fixed; }
+.sec-photo { position:relative; background-size:cover; background-position:center; background-repeat:no-repeat; background-attachment:fixed; padding:clamp(3.5rem,7vw,6rem) 0; }
 .sec-photo::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.65); pointer-events:none; }
 .sec-photo > .container { position:relative; z-index:1; }
-.sec-photo .txt-block { background:rgba(255,255,255,.05); backdrop-filter:blur(4px); border-left-color:var(--cta); box-shadow:0 10px 40px rgba(0,0,0,.3); }
+.sec-photo .txt-block { background:rgba(255,255,255,.05); backdrop-filter:blur(4px); border-left-color:var(--cta); box-shadow:0 10px 40px rgba(0,0,0,.3); margin-bottom:0; }
 .sec-photo .txt-block h2, .sec-photo .txt-block > div > p { color:#fff; }
 .sec-photo .txt-block-tag { color:var(--cta); }
 .sec-photo .txt-block-icon { color:#fff; }
@@ -92,10 +92,25 @@
 .sec-photo .txt-item p { color:rgba(255,255,255,.85); }
 @media(max-width:768px){ .sec-photo { background-attachment:scroll; } }
 
-/* ── BANNER QUADRICICLO ── */
-.quad-img { width:100%; aspect-ratio:21/9; overflow:hidden; border-radius:10px; margin-bottom:clamp(2rem,4vw,3rem); }
-.quad-img img { width:100%; height:100%; object-fit:cover; display:block; }
-@media(max-width:768px){ .quad-img { aspect-ratio:16/10; } }
+/* ── QUADRICICLO SPLIT (imagem esquerda + texto direita) ── */
+.sec-green-dark { background:var(--accent-hover); }
+.quad-split { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center; }
+.quad-split-img { overflow:hidden; border-radius:10px; aspect-ratio:3/4; max-height:560px; }
+.quad-split-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.quad-split-txt { display:flex; flex-direction:column; gap:.8rem; color:#fff; }
+.quad-split-txt .txt-block-icon { font-size:3rem; line-height:1; color:#fff; margin-bottom:.2rem; }
+.quad-split-txt .txt-block-tag { color:var(--cta); }
+.quad-split-txt h2 { margin:.1rem 0 .4rem; color:#fff; }
+.quad-split-txt > p { color:rgba(255,255,255,.88); font-size:.96rem; }
+.quad-cols { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
+.quad-cols .txt-item { background:rgba(0,0,0,.25); border-top:2px solid var(--cta); padding:1rem 1.1rem; }
+.quad-cols .txt-item h4 { color:#fff; font-size:.72rem; letter-spacing:.08em; margin-bottom:.35rem; }
+.quad-cols .txt-item p { color:rgba(255,255,255,.82); font-size:.8rem; line-height:1.55; }
+@media(max-width:768px){
+  .quad-split { grid-template-columns:1fr; }
+  .quad-split-img { aspect-ratio:16/10; max-height:none; }
+  .quad-cols { grid-template-columns:1fr; }
+}
 
 /* MOBILE */
 @media(max-width:768px){
@@ -248,35 +263,35 @@
   </div>
 </section>
 
-<!-- QUADRICICLO — txt-block com foto -->
-<section class="sec-green">
+<!-- QUADRICICLO — imagem à esquerda + texto à direita -->
+<section class="sec-green sec-green-dark">
   <div class="container">
-    <div class="quad-img">
-      <img src="../assets/img/atividades/quadriciclo.jpg" alt="Passeio de quadriciclo pela propriedade — Pousada Recanto dos Pôneis" loading="lazy">
-    </div>
-    <div class="txt-block">
-      <div>
+    <div class="quad-split">
+      <div class="quad-split-img">
+        <img src="../assets/img/atividades/quadriciclo.jpg" alt="Passeio de quadriciclo pela propriedade — Pousada Recanto dos Pôneis" loading="lazy">
+      </div>
+      <div class="quad-split-txt">
         <span class="txt-block-icon"><i class="ph-thin ph-motorcycle"></i></span>
         <div class="txt-block-tag">Aventura</div>
         <h2>Quadriciclo</h2>
         <p>Dois quadriciclos super potentes (520 e 420 cilindradas), para uma experiência incrível com segurança. Passeio dentro da propriedade com acompanhante na carona. Ou, sem custo, um passeio na carretinha puxada pelo quadriciclo — com ou sem emoção, você escolhe!</p>
-      </div>
-      <div class="txt-block-cols">
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-currency-circle-dollar"></i> R$ 75/15min ou R$ 300/1h</h4>
-          <p>Valores por passeio dentro da propriedade.</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-users"></i> Máximo 2 pessoas (16+ anos)</h4>
-          <p>Piloto e um acompanhante na carona.</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-truck"></i> Carretinha grátis puxada pelo quadriciclo</h4>
-          <p>Passeio sem custo — com ou sem emoção, você escolhe!</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-shield-check"></i> Equipamentos seminovos 2019</h4>
-          <p>Quadriciclos bem mantidos para sua segurança.</p>
+        <div class="txt-block-cols quad-cols">
+          <div class="txt-item">
+            <h4><i class="ph-thin ph-currency-circle-dollar"></i> R$ 75/15min ou R$ 300/1h</h4>
+            <p>Valores por passeio dentro da propriedade.</p>
+          </div>
+          <div class="txt-item">
+            <h4><i class="ph-thin ph-users"></i> Máximo 2 pessoas (16+ anos)</h4>
+            <p>Piloto e um acompanhante na carona.</p>
+          </div>
+          <div class="txt-item">
+            <h4><i class="ph-thin ph-truck"></i> Carretinha grátis</h4>
+            <p>Passeio sem custo — com ou sem emoção.</p>
+          </div>
+          <div class="txt-item">
+            <h4><i class="ph-thin ph-shield-check"></i> Equipamentos seminovos</h4>
+            <p>Quadriciclos bem mantidos para sua segurança.</p>
+          </div>
         </div>
       </div>
     </div>
