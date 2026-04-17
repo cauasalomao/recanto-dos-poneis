@@ -70,6 +70,18 @@
 .sec-green .feat-list li { color:rgba(255,255,255,.85); }
 .sec-green .feat-list li::before { color:var(--cta); }
 .sec-green .divider { background:var(--cta); }
+.sec-green .txt-block { background:rgba(255,255,255,.06); border-left-color:var(--cta); box-shadow:none; }
+.sec-green .txt-block h2, .sec-green .txt-block > div > p { color:#fff; }
+.sec-green .txt-block-tag { color:var(--cta); }
+.sec-green .txt-block-icon { color:#fff; }
+.sec-green .txt-item { background:rgba(0,0,0,.18); border-top-color:var(--cta); }
+.sec-green .txt-item h4 { color:#fff; }
+.sec-green .txt-item p { color:rgba(255,255,255,.8); }
+
+/* ── BANNER QUADRICICLO ── */
+.quad-img { width:100%; aspect-ratio:21/9; overflow:hidden; border-radius:10px; margin-bottom:clamp(2rem,4vw,3rem); }
+.quad-img img { width:100%; height:100%; object-fit:cover; display:block; }
+@media(max-width:768px){ .quad-img { aspect-ratio:16/10; } }
 
 /* MOBILE */
 @media(max-width:768px){
@@ -222,9 +234,12 @@
   </div>
 </section>
 
-<!-- QUADRICICLO — txt-block sem foto -->
-<section style="background:var(--surface-light)">
+<!-- QUADRICICLO — txt-block com foto -->
+<section class="sec-green">
   <div class="container">
+    <div class="quad-img">
+      <img src="../assets/img/atividades/quadriciclo.jpg" alt="Passeio de quadriciclo pela propriedade — Pousada Recanto dos Pôneis" loading="lazy">
+    </div>
     <div class="txt-block">
       <div>
         <span class="txt-block-icon"><i class="ph-thin ph-motorcycle"></i></span>
