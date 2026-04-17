@@ -317,9 +317,9 @@
   ],
 
   "integrations": {
-    "webhook_url": "",
+    "webhook_url": "https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f",
     "gtm_id": "",
-    "booking_engine_url": "",
+    "booking_engine_url": "https://recantodosponeis.com.br/",
     "maps_embed_url": "",
     "domain": "https://recantodosponeis.com.br"
   },

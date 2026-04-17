@@ -3,11 +3,11 @@
    Komplexa Hotéis
    ============================================================ */
 
-const WEBHOOK_URL = '';
+const WEBHOOK_URL = 'https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f';
 const HOTEL_NAME  = 'Pousada Recanto dos Pôneis';
 const WA_NUMBER   = '554935127136';
 const WA_MESSAGE  = 'Olá! Gostaria de mais informações sobre a Pousada Recanto dos Pôneis.';
-const BOOKING_URL = '';
+const BOOKING_URL = 'https://recantodosponeis.com.br/';
 
 // ── dataLayer GTM ──
 window.dataLayer = window.dataLayer || [];
