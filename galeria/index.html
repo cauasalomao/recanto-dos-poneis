@@ -303,7 +303,7 @@
   if (grid) {
     grid.innerHTML = GALLERY.map(([path, alt], i) =>
       `<div class="gi" onclick="openLB(${i})">
-         <img src="../assets/img/${path}" alt="${alt}" loading="lazy">
+         <img src="../assets/img/${path}" alt="${alt}" loading="lazy" class="loaded">
          <div class="gi-ov">⊕</div>
        </div>`
     ).join('');
