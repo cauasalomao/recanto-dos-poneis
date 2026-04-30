@@ -1,0 +1,9 @@
+.git
+.gitignore
+.claude
+fotos
+*.md
+blog-plan.json
+node_modules
+.DS_Store
+Thumbs.db
