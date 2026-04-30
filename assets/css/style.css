@@ -430,6 +430,11 @@ footer { background:var(--text); color:rgba(255,255,255,.8); padding:clamp(4rem,
   .wl-box { width:100%; max-width:420px; }
   /* contact grid */
   .ct-form .fg-row { grid-template-columns:1fr; }
+  /* page hero — proporção mais próxima do desktop no mobile */
+  .pg-hero { height:38vh; min-height:280px; }
+  .pg-hero > img { object-position:center 28%; height:100%; }
+  .pg-hero-c { padding:1.5rem clamp(1rem,4vw,2rem); }
+  .pg-hero-c h1 { font-size:clamp(2rem,8vw,3rem); }
 }
 @media(max-width:480px){
   html { zoom:1; }
