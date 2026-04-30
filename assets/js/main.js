@@ -8,7 +8,7 @@ const HOTEL_NAME  = 'Pousada Recanto dos Pôneis';
 const WA_NUMBER   = '554935127136';
 const WA_MESSAGE  = 'Olá! Gostaria de mais informações sobre a Pousada Recanto dos Pôneis.';
 const BOOKING_URL = 'https://recantodosponeis.com.br/';
-const MOTOR_BASE  = 'https://recantodosponeis.com.br'; // temporário — trocar pela URL do Foco Multimídia quando disponível
+const MOTOR_BASE  = 'https://reservas.recantodosponeis.com.br';
 
 // ── dataLayer GTM ──
 window.dataLayer = window.dataLayer || [];
