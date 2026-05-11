@@ -271,6 +271,84 @@
       font-weight: 600;
     }
 
+    /* ── 4 PLACEHOLDERS (Lareira / Vinho / Hidromassagem / Geada) ── */
+    .inv-mood-grid {
+      max-width: 1200px;
+      margin: clamp(4rem,7vw,6rem) auto 0;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    .inv-mood {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--glass-bd);
+      isolation: isolate;
+      cursor: default;
+      transition: transform .6s var(--ease);
+    }
+    .inv-mood:hover { transform: translateY(-6px); }
+    .inv-mood-ph { position: absolute; inset: 0; z-index: 0; }
+    .inv-mood.m1 .inv-mood-ph {
+      background:
+        radial-gradient(ellipse at 50% 80%, rgba(255,170,60,.45) 0%, transparent 55%),
+        linear-gradient(160deg, #2a1108 0%, #5e2412 40%, #c2541a 70%, #f6b230 100%);
+    }
+    .inv-mood.m2 .inv-mood-ph {
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(120,20,40,.5) 0%, transparent 60%),
+        linear-gradient(170deg, #1a0a14 0%, #3d0e22 40%, #6e1530 70%, #a83a55 100%);
+    }
+    .inv-mood.m3 .inv-mood-ph {
+      background:
+        radial-gradient(ellipse at 60% 60%, rgba(180,220,235,.45) 0%, transparent 55%),
+        linear-gradient(180deg, #0e1e2c 0%, #1f4763 40%, #4b87a9 70%, #c9dbe8 100%);
+    }
+    .inv-mood.m4 .inv-mood-ph {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.55) 0%, transparent 55%),
+        linear-gradient(180deg, #4a6680 0%, #8aa6bf 50%, #d7e4ee 100%);
+    }
+    .inv-mood::after {
+      content:"";
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(6,16,24,.5) 78%, rgba(6,16,24,.92) 100%);
+    }
+    .inv-mood figcaption {
+      position: absolute; z-index: 2;
+      left: 0; right: 0; bottom: 0;
+      padding: 1.6rem 1.4rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .inv-mood figcaption .ico {
+      width: 38px; height: 38px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--ember);
+      font-size: 1.1rem;
+    }
+    .inv-mood figcaption h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+
+    @media (max-width: 900px) {
+      .inv-mood-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .inv-mood-grid { grid-template-columns: 1fr; }
+      .inv-mood { aspect-ratio: 4 / 3; }
+    }
+
     /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
     .inv-exp-bg {
       background:
@@ -713,12 +791,43 @@
       </div>
     </section>
 
-    <!-- ═══ DOBRA POÉTICA ═══ -->
+    <!-- ═══ DOBRA POÉTICA + 4 PLACEHOLDERS ═══ -->
     <section class="inv-poetic">
       <blockquote>
         “Existe um lugar onde o frio<br>não é desconforto — é convite.”
       </blockquote>
       <span class="sig">— Recanto dos Pôneis · Inverno na Serra</span>
+
+      <div class="inv-mood-grid">
+        <figure class="inv-mood m1">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-fire"></i></span>
+            <h3>Lareira</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m2">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-wine"></i></span>
+            <h3>Vinho</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m3">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-bathtub"></i></span>
+            <h3>Hidromassagem</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m4">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-snowflake"></i></span>
+            <h3>Geada</h3>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- ═══ EXPERIÊNCIA DO INVERNO ═══ -->
@@ -1097,7 +1206,7 @@
 
     // ── Reveal on scroll ──
     (function(){
-      const els = document.querySelectorAll('.inv-sense, .inv-u, .inv-place, .inv-room, .inv-testi');
+      const els = document.querySelectorAll('.inv-sense, .inv-u, .inv-place, .inv-room, .inv-testi, .inv-mood');
       els.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(24px)';
