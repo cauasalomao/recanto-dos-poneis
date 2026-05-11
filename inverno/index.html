@@ -171,11 +171,12 @@
       font-size: clamp(1rem, 1.4vw, 1.2rem);
       max-width: 620px;
       margin: 0 auto 2.6rem;
-      color: rgba(255,255,255,.9);
+      color: #ffffff;
       font-weight: 300;
       line-height: 1.75;
     }
-    .inv-hero-meta { color: rgba(255,255,255,.75); }
+    .inv-hero-meta { color: #ffffff; }
+    .inv-hero-meta span { color: #ffffff; }
     .inv-hero .inv-btn-glass { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.08); }
     .inv-hero .inv-btn-glass:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
     .inv-hero-ctas {
@@ -246,7 +247,7 @@
 
     /* ── DOBRA POÉTICA ── */
     .inv-poetic {
-      padding: clamp(5rem,9vw,9rem) 1.5rem;
+      padding: 0;
       background: var(--leaf-mist);
       text-align: center;
       position: relative;
@@ -273,24 +274,24 @@
 
     /* ── 4 PLACEHOLDERS (Lareira / Vinho / Hidromassagem / Geada) ── */
     .inv-mood-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
+      width: 100%;
+      margin: 0;
+      padding: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
+      gap: 0;
     }
     .inv-mood {
       position: relative;
       aspect-ratio: 3 / 4;
-      border-radius: 10px;
       overflow: hidden;
-      border: 1px solid var(--glass-bd);
+      border: none;
       isolation: isolate;
       cursor: default;
       transition: transform .6s var(--ease);
     }
-    .inv-mood:hover { transform: translateY(-6px); }
+    .inv-mood:hover .inv-mood-ph { transform: scale(1.04); }
+    .inv-mood-ph { transition: transform 1s var(--ease); }
     .inv-mood-ph { position: absolute; inset: 0; z-index: 0; }
     .inv-mood.m1 .inv-mood-ph {
       background:
@@ -343,10 +344,11 @@
 
     @media (max-width: 900px) {
       .inv-mood-grid { grid-template-columns: repeat(2, 1fr); }
+      .inv-mood { aspect-ratio: 1 / 1; }
     }
     @media (max-width: 480px) {
       .inv-mood-grid { grid-template-columns: 1fr; }
-      .inv-mood { aspect-ratio: 4 / 3; }
+      .inv-mood { aspect-ratio: 16 / 10; }
     }
 
     /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
