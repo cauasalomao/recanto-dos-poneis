@@ -68,7 +68,7 @@
     /* ── HERO ── */
     .inv-hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 125vh; /* compensa o html { zoom: 0.8 } global */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -671,7 +671,7 @@
     body.inv-page .inv-hero { padding-top: 5rem; }
 
     @media (max-width: 768px) {
-      .inv-hero { min-height: 92vh; padding-top: 7rem; }
+      .inv-hero { min-height: 115vh; padding-top: 7rem; }
       .inv-hero-meta { gap: 1.2rem; font-size: .65rem; }
       .inv-badges { gap: 1.4rem; }
     }
