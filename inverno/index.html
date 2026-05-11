@@ -356,6 +356,70 @@
       .inv-mood { aspect-ratio: 16 / 10; }
     }
 
+    /* ── GALERIA DE ATMOSFERA ── */
+    .inv-gallery-bg { background: var(--paper); }
+    .inv-gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 140px;
+      gap: .8rem;
+      margin-top: 3rem;
+    }
+    .inv-g {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--glass-bd);
+      cursor: default;
+    }
+    .inv-g .ph {
+      position: absolute; inset: 0;
+      transition: transform 1s var(--ease);
+    }
+    .inv-g:hover .ph { transform: scale(1.05); }
+    .inv-g::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(26,73,34,.18) 100%);
+      pointer-events: none;
+    }
+    /* placeholders com gradientes únicos — paisagens da serra no inverno */
+    .inv-g.g1 .ph { background: linear-gradient(170deg, #1a4922 0%, #5b7a3d 50%, #e8efd8 100%); }
+    .inv-g.g2 .ph { background: linear-gradient(200deg, #2a3a1f 0%, #6b8a55 60%, #ffffff 100%); }
+    .inv-g.g3 .ph { background: linear-gradient(160deg, #4a3018 0%, #c2541a 50%, #f6b230 100%); }
+    .inv-g.g4 .ph { background: linear-gradient(180deg, #1f2a16 0%, #3d5826 50%, #b8c9a0 100%); }
+    .inv-g.g5 .ph { background: linear-gradient(150deg, #1c3618 0%, #6b8a55 50%, #d8e3c8 100%); }
+    .inv-g.g6 .ph { background: linear-gradient(190deg, #233e1d 0%, #5b7a3d 60%, #eaf1e2 100%); }
+    .inv-g.g7 .ph { background: linear-gradient(170deg, #2a1108 0%, #5e2412 40%, #c2541a 100%); }
+    .inv-g.g8 .ph { background: linear-gradient(180deg, #6b8a55 0%, #b8c9a0 50%, #ffffff 100%); }
+
+    /* mosaico asymmetric */
+    .inv-g.g1 { grid-column: span 3; grid-row: span 2; }
+    .inv-g.g2 { grid-column: span 3; grid-row: span 1; }
+    .inv-g.g3 { grid-column: span 2; grid-row: span 2; }
+    .inv-g.g4 { grid-column: span 1; grid-row: span 1; }
+    .inv-g.g5 { grid-column: span 2; grid-row: span 1; }
+    .inv-g.g6 { grid-column: span 3; grid-row: span 2; }
+    .inv-g.g7 { grid-column: span 2; grid-row: span 1; }
+    .inv-g.g8 { grid-column: span 1; grid-row: span 1; }
+
+    @media (max-width: 900px) {
+      .inv-gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 120px; }
+      .inv-g.g1 { grid-column: span 4; grid-row: span 2; }
+      .inv-g.g2 { grid-column: span 2; grid-row: span 1; }
+      .inv-g.g3 { grid-column: span 2; grid-row: span 2; }
+      .inv-g.g4 { grid-column: span 2; grid-row: span 1; }
+      .inv-g.g5 { grid-column: span 2; grid-row: span 1; }
+      .inv-g.g6 { grid-column: span 2; grid-row: span 2; }
+      .inv-g.g7 { grid-column: span 2; grid-row: span 1; }
+      .inv-g.g8 { grid-column: span 2; grid-row: span 1; }
+    }
+    @media (max-width: 540px) {
+      .inv-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 110px; }
+      .inv-g, .inv-g.g1, .inv-g.g2, .inv-g.g3, .inv-g.g4, .inv-g.g5, .inv-g.g6, .inv-g.g7, .inv-g.g8 { grid-column: span 1; grid-row: span 1; }
+      .inv-g.g1, .inv-g.g3, .inv-g.g6 { grid-column: span 2; grid-row: span 2; }
+    }
+
     /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
     .inv-exp-bg {
       background:
@@ -835,6 +899,26 @@
       </div>
     </section>
 
+    <!-- ═══ GALERIA DE ATMOSFERA ═══ -->
+    <section class="inv-sec inv-gallery-bg">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Galeria</span>
+          <h2 class="inv-h2">Viva um inverno de<br>paisagens inesquecíveis</h2>
+        </div>
+        <div class="inv-gallery">
+          <figure class="inv-g g1"><div class="ph"></div></figure>
+          <figure class="inv-g g2"><div class="ph"></div></figure>
+          <figure class="inv-g g3"><div class="ph"></div></figure>
+          <figure class="inv-g g4"><div class="ph"></div></figure>
+          <figure class="inv-g g5"><div class="ph"></div></figure>
+          <figure class="inv-g g6"><div class="ph"></div></figure>
+          <figure class="inv-g g7"><div class="ph"></div></figure>
+          <figure class="inv-g g8"><div class="ph"></div></figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ EXPERIÊNCIA DO INVERNO ═══ -->
     <section class="inv-sec inv-exp-bg" id="experiencia">
       <div class="inv-wrap">
@@ -1211,7 +1295,7 @@
 
     // ── Reveal on scroll ──
     (function(){
-      const els = document.querySelectorAll('.inv-sense, .inv-u, .inv-place, .inv-room, .inv-testi, .inv-mood');
+      const els = document.querySelectorAll('.inv-sense, .inv-u, .inv-place, .inv-room, .inv-testi, .inv-mood, .inv-g');
       els.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(24px)';
