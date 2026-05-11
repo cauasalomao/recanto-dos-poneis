@@ -664,7 +664,8 @@
     body.inv-page .hdr .nav a, body.inv-page .hdr .logo { color: var(--frost); }
     body.inv-page .hdr .hdr-btn { background: var(--ember); color: #0a1420; }
     body.inv-page .hdr.hero-mode { background: transparent; border-bottom-color: transparent; }
-    body.inv-page .hdr.hero-mode .nav a { color: rgba(255,255,255,.9); }
+    body.inv-page .hdr .nav, body.inv-page .hdr .ham, body.inv-page .mobnav { display: none !important; }
+    body.inv-page .hdr .hdr-inner { justify-content: space-between; }
 
     @media (max-width: 768px) {
       .inv-hero { min-height: 92vh; padding-top: 7rem; }
@@ -680,37 +681,13 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6C97M4C"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- ═══ HEADER (mesma estrutura do site) ═══ -->
-  <header class="hdr hero-mode" id="hdr">
+  <!-- ═══ HEADER MINIMAL — só logo e CTA ═══ -->
+  <header class="hdr hero-mode inv-hdr" id="hdr">
     <div class="hdr-inner">
       <a href="../index.html" class="logo"><img src="/assets/img/logo.png" alt="Pousada Recanto dos Pôneis" class="logo-img"></a>
-      <nav class="nav">
-        <a href="../sobre/">Sobre</a>
-        <a href="../experiencia/">Experiência</a>
-        <a href="../acomodacoes/">Acomodações</a>
-        <a href="../galeria/">Galeria</a>
-        <a href="../localizacao/">Localização</a>
-        <a href="../blog/">Blog</a>
-        <a href="../contato/">Contato</a>
-      </nav>
       <a href="#" onclick="openBooking();return false" class="hdr-btn">Reservar</a>
-      <button class="ham" id="ham" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
-
-  <div class="mobnav" id="mobnav">
-    <a href="../sobre/" onclick="closeMob()">Sobre</a>
-    <a href="../experiencia/" onclick="closeMob()">Experiência</a>
-    <a href="../acomodacoes/" onclick="closeMob()">Acomodações</a>
-    <a href="../galeria/" onclick="closeMob()">Galeria</a>
-    <a href="../localizacao/" onclick="closeMob()">Localização</a>
-    <a href="../blog/" onclick="closeMob()">Blog</a>
-    <a href="../contato/" onclick="closeMob()">Contato</a>
-    <a href="#" class="btn-gold" style="margin-top:1rem"
-       onclick="closeMob();openBooking();return false">Reservar Agora</a>
-  </div>
 
   <main class="inv">
 
