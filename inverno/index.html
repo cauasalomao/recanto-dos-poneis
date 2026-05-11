@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+  <title>Inverno na Serra | Pousada Recanto dos Pôneis — Rio Rufino, SC</title>
+  <meta name="description" content="Viva o inverno mais memorável da sua vida entre Urubici e Urupema — geadas, lareira acesa, céu estrelado e o silêncio raro da Serra Catarinense. Reserve sua estadia.">
+
+  <meta property="og:title" content="Inverno na Serra | Pousada Recanto dos Pôneis">
+  <meta property="og:description" content="Entre geadas, lareira e céu estrelado — a temporada mais aconchegante da Serra Catarinense.">
+  <meta property="og:url" content="https://recantodosponeis.com.br/inverno/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://recantodosponeis.com.br/inverno/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M6C97M4C');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Inverno na Serra — Pousada Recanto dos Pôneis",
+    "url":"https://recantodosponeis.com.br/inverno/",
+    "description":"Temporada de inverno na Serra Catarinense entre Urubici e Urupema.",
+    "inLanguage":"pt-BR"
+  }
+  </script>
+
+  <style>
+    /* ═══ INVERNO — escopo local ═══ */
+    .inv {
+      --ice:        #c9dbe8;
+      --frost:      #e8f1f8;
+      --midnight:   #0a1420;
+      --midnight-2: #142436;
+      --deep:       #061018;
+      --ember:      #f6b230;
+      --ember-soft: rgba(246,178,48,.85);
+      --silver:     rgba(232,241,248,.7);
+      --silver-soft:rgba(232,241,248,.45);
+      --glass:      rgba(255,255,255,.06);
+      --glass-bd:   rgba(255,255,255,.12);
+      color: var(--frost);
+      background: var(--midnight);
+      font-family: var(--font-body);
+    }
+    .inv h1, .inv h2, .inv h3 { color: var(--frost); }
+    .inv p { color: var(--silver); }
+    .inv .overline { color: var(--ember); }
+
+    /* ── HERO ── */
+    .inv-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(ellipse at 50% 110%, rgba(246,178,48,.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 30%, rgba(120,170,210,.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(180,210,240,.10) 0%, transparent 60%),
+        linear-gradient(180deg, #050a12 0%, #0a1420 40%, #142436 100%);
+    }
+    .inv-hero::before {
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.9), transparent 60%),
+        radial-gradient(1.5px 1.5px at 28% 42%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(1px 1px at 47% 12%, rgba(255,255,255,.9), transparent 60%),
+        radial-gradient(2px 2px at 63% 36%, rgba(255,255,255,.6), transparent 60%),
+        radial-gradient(1px 1px at 81% 22%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1.5px 1.5px at 92% 48%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(1px 1px at 8% 62%, rgba(255,255,255,.6), transparent 60%),
+        radial-gradient(2px 2px at 38% 72%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1px 1px at 58% 82%, rgba(255,255,255,.5), transparent 60%),
+        radial-gradient(1.5px 1.5px at 74% 68%, rgba(255,255,255,.7), transparent 60%);
+      opacity:.85;
+      animation: twinkle 6s ease-in-out infinite alternate;
+      pointer-events:none;
+      z-index:0;
+    }
+    @keyframes twinkle { 0%{opacity:.5} 100%{opacity:.95} }
+
+    /* neve caindo */
+    .inv-snow {
+      position:absolute; inset:0; pointer-events:none; z-index:1;
+      overflow:hidden;
+    }
+    .inv-snow span {
+      position:absolute; top:-10px;
+      color: rgba(255,255,255,.7);
+      font-size: 10px;
+      animation: snowfall linear infinite;
+      text-shadow: 0 0 6px rgba(255,255,255,.6);
+    }
+    @keyframes snowfall {
+      0% { transform: translate3d(0,-10vh,0) rotate(0deg); opacity:0; }
+      10%{ opacity:1; }
+      100%{ transform: translate3d(20px, 110vh, 0) rotate(360deg); opacity:.3; }
+    }
+
+    .inv-hero-c {
+      position:relative; z-index:3;
+      max-width: 880px;
+    }
+    .inv-hero-overline {
+      display:inline-flex; align-items:center; gap:.7rem;
+      font-size:.68rem; letter-spacing:.32em; text-transform:uppercase;
+      color: var(--ember);
+      padding:.55rem 1.4rem;
+      border:1px solid rgba(246,178,48,.35);
+      border-radius:999px;
+      backdrop-filter: blur(8px);
+      background: rgba(246,178,48,.05);
+      margin-bottom:2rem;
+      font-weight:600;
+    }
+    .inv-hero-overline i { font-size:1.1rem; }
+    .inv-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.4rem, 9vw, 8rem);
+      line-height: .98;
+      font-weight: 400;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, #c9dbe8 60%, #8ba8c4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 60px rgba(201,219,232,.15);
+    }
+    .inv-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(180deg, #ffd97a 0%, #f6b230 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .inv-hero-sub {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto 2.6rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .inv-hero-ctas {
+      display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
+      margin-bottom: 3rem;
+    }
+    .inv-btn-ember {
+      display:inline-flex; align-items:center; gap:.6rem;
+      padding: 1rem 2.4rem;
+      background: linear-gradient(135deg, #f6b230 0%, #d99819 100%);
+      color: #0a1420;
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      font-weight: 700;
+      border: none; border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(246,178,48,.35), inset 0 1px 0 rgba(255,255,255,.4);
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .inv-btn-ember:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(246,178,48,.5); }
+    .inv-btn-glass {
+      display:inline-flex; align-items:center; gap:.6rem;
+      padding: 1rem 2.4rem;
+      background: var(--glass);
+      color: var(--frost);
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid var(--glass-bd);
+      border-radius: 4px;
+      backdrop-filter: blur(12px);
+      transition: background .3s, border-color .3s;
+    }
+    .inv-btn-glass:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.3); }
+
+    .inv-hero-meta {
+      display:flex; gap:2.5rem; justify-content:center; flex-wrap:wrap;
+      font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+      color: var(--silver-soft);
+      font-weight: 500;
+    }
+    .inv-hero-meta span { display:inline-flex; align-items:center; gap:.5rem; }
+    .inv-hero-meta i { color: var(--ember); font-size:1rem; }
+
+    /* ── SEÇÕES BASE ── */
+    .inv-sec { padding: clamp(5rem,10vw,9rem) 1.5rem; position:relative; }
+    .inv-wrap { max-width: 1200px; margin: 0 auto; }
+    .inv-eyebrow {
+      font-size:.68rem; letter-spacing:.28em; text-transform:uppercase;
+      color: var(--ember); font-weight:700; margin-bottom: 1.2rem;
+      display: inline-block;
+    }
+    .inv-h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      line-height: 1.08;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(180deg, #ffffff 0%, #b8cee0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .inv-lead {
+      font-size: clamp(1rem, 1.2vw, 1.1rem);
+      max-width: 620px;
+      color: var(--silver);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .inv-c .inv-lead { margin: 0 auto; }
+    .inv-c { text-align: center; }
+    .inv-c .inv-eyebrow { display: block; }
+    .inv-sec-head { margin-bottom: clamp(3rem,5vw,5rem); }
+
+    /* ── DOBRA POÉTICA ── */
+    .inv-poetic {
+      padding: clamp(6rem,12vw,12rem) 1.5rem;
+      background: linear-gradient(180deg, #142436 0%, #0a1420 100%);
+      text-align: center;
+      position: relative;
+    }
+    .inv-poetic blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      line-height: 1.25;
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, #ffffff 0%, #8ba8c4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 400;
+    }
+    .inv-poetic .sig {
+      display:block;
+      margin-top: 2rem;
+      font-family: var(--font-body);
+      font-size: .7rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ember-soft);
+      font-weight: 600;
+    }
+
+    /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
+    .inv-exp-bg {
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(120,170,210,.10) 0%, transparent 50%),
+        linear-gradient(180deg, #0a1420 0%, #061018 100%);
+    }
+    .inv-sense-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .inv-sense {
+      position: relative;
+      padding: 2.5rem 1.8rem;
+      background: linear-gradient(160deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+      border: 1px solid var(--glass-bd);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      transition: transform .5s var(--ease), border-color .5s, background .5s;
+    }
+    .inv-sense::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(246,178,48,.4), transparent);
+      opacity: 0; transition: opacity .5s;
+    }
+    .inv-sense:hover {
+      transform: translateY(-6px);
+      border-color: rgba(246,178,48,.3);
+      background: linear-gradient(160deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 100%);
+    }
+    .inv-sense:hover::before { opacity: 1; }
+    .inv-sense .ico {
+      width: 56px; height: 56px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,178,48,.18) 0%, transparent 70%);
+      margin-bottom: 1.4rem;
+      font-size: 1.8rem;
+      color: var(--ember);
+    }
+    .inv-sense h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      margin-bottom: .6rem;
+      color: var(--frost);
+    }
+    .inv-sense p {
+      font-size: .9rem;
+      line-height: 1.65;
+      color: var(--silver);
+      font-weight: 300;
+    }
+    .inv-sense .stat {
+      display:block;
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--ember);
+      margin-bottom: .8rem;
+    }
+
+    /* ── ÚNICA (cards verticais elegantes) ── */
+    .inv-unique-bg {
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(246,178,48,.07) 0%, transparent 50%),
+        linear-gradient(180deg, #061018 0%, #0a1420 100%);
+    }
+    .inv-unique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .inv-u {
+      padding: 3rem 2rem 2.4rem;
+      background: linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.01) 100%);
+      border: 1px solid var(--glass-bd);
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      transition: transform .5s var(--ease);
+    }
+    .inv-u:hover { transform: translateY(-4px); }
+    .inv-u .num {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      color: var(--ember);
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: .85;
+    }
+    .inv-u h3 {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: .8rem;
+      letter-spacing: .02em;
+    }
+    .inv-u p { font-size: .88rem; line-height: 1.6; color: var(--silver); font-weight: 300; }
+
+    /* ── REGIÃO — placeholder cinematográfico ── */
+    .inv-region-bg {
+      background: linear-gradient(180deg, #0a1420 0%, #142436 100%);
+    }
+    .inv-region-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3.5rem;
+    }
+    .inv-place {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--glass-bd);
+      isolation: isolate;
+      cursor: default;
+      transition: transform .6s var(--ease);
+    }
+    .inv-place:hover { transform: translateY(-6px); }
+    .inv-place .ph-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    /* gradientes únicos por card — cada um sugere um lugar */
+    .inv-place.p1 .ph-bg { background: linear-gradient(160deg, #1a3a5c 0%, #3a6890 50%, #c9dbe8 100%); }
+    .inv-place.p2 .ph-bg { background: linear-gradient(180deg, #0a1420 0%, #2e4f6e 60%, #e8f1f8 100%); }
+    .inv-place.p3 .ph-bg { background: linear-gradient(200deg, #233f5e 0%, #5a7d9c 50%, #ffffff 100%); }
+    .inv-place.p4 .ph-bg { background: linear-gradient(170deg, #0a1420 0%, #1d3b58 50%, #8fb0cc 100%); }
+    .inv-place.p5 .ph-bg { background: linear-gradient(190deg, #1c3550 0%, #4a6f93 60%, #c9dbe8 100%); }
+    .inv-place.p6 .ph-bg { background: linear-gradient(150deg, #14283e 0%, #345d80 50%, #d0e2f0 100%); }
+    .inv-place::after {
+      content:"";
+      position:absolute; inset:0; z-index:1;
+      background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(6,16,24,.45) 70%, rgba(6,16,24,.92) 100%);
+    }
+    .inv-place .ph-mist {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(255,255,255,.10) 0%, transparent 50%);
+      filter: blur(20px);
+      mix-blend-mode: screen;
+    }
+    .inv-place-body {
+      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
+      padding: 2rem 1.8rem;
+    }
+    .inv-place-body .tag {
+      display:inline-block;
+      font-size: .62rem; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: .8rem;
+      font-weight: 700;
+    }
+    .inv-place-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      line-height: 1.05;
+      margin-bottom: .6rem;
+      color: #fff;
+    }
+    .inv-place-body p {
+      font-size: .85rem;
+      line-height: 1.55;
+      color: var(--silver);
+      font-weight: 300;
+    }
+
+    /* ── ACOMODAÇÕES PLACEHOLDER ── */
+    .inv-rooms-bg {
+      background: linear-gradient(180deg, #142436 0%, #0a1420 100%);
+    }
+    .inv-rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3.5rem;
+    }
+    .inv-room {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--glass-bd);
+      background: rgba(255,255,255,.02);
+    }
+    .inv-room .ph {
+      aspect-ratio: 4 / 3;
+      position: relative;
+      overflow: hidden;
+    }
+    .inv-room .ph::before {
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(160deg, #1d3756 0%, #3a5d80 50%, #8fb0cc 100%);
+    }
+    .inv-room.r2 .ph::before { background: linear-gradient(160deg, #0a1420 0%, #2c4d70 50%, #c9dbe8 100%); }
+    .inv-room.r3 .ph::before { background: linear-gradient(160deg, #14283e 0%, #4a6f93 50%, #d0e2f0 100%); }
+    .inv-room.r4 .ph::before { background: linear-gradient(160deg, #233f5e 0%, #5a7d9c 50%, #e8f1f8 100%); }
+    .inv-room .ph::after {
+      content:"";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.18) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(246,178,48,.12) 0%, transparent 50%);
+      filter: blur(10px);
+    }
+    .inv-room-body { padding: 1.8rem 1.6rem 2rem; }
+    .inv-room-body .tag {
+      font-size: .62rem; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--ember); font-weight: 700;
+    }
+    .inv-room-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin: .4rem 0 .8rem;
+    }
+    .inv-room-body p { font-size: .88rem; line-height: 1.6; color: var(--silver); font-weight: 300; }
+
+    /* ── PROVA SOCIAL ── */
+    .inv-social-bg {
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(246,178,48,.05) 0%, transparent 50%),
+        linear-gradient(180deg, #0a1420 0%, #061018 100%);
+    }
+    .inv-testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .inv-testi {
+      padding: 2.4rem 2rem;
+      background: linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+      border: 1px solid var(--glass-bd);
+      border-radius: 10px;
+      position: relative;
+    }
+    .inv-testi .stars { color: var(--ember); font-size: 1rem; letter-spacing: .15em; margin-bottom: 1rem; }
+    .inv-testi blockquote {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--frost);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .inv-testi .who {
+      display: flex; align-items: center; gap: .9rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--glass-bd);
+    }
+    .inv-testi .avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #345d80 0%, #c9dbe8 100%);
+      flex-shrink: 0;
+    }
+    .inv-testi .who-info { font-size: .8rem; }
+    .inv-testi .who-info strong { display: block; color: var(--frost); font-weight: 600; }
+    .inv-testi .who-info span { color: var(--silver-soft); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+
+    .inv-badges {
+      display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--glass-bd);
+    }
+    .inv-badge {
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: var(--silver);
+    }
+    .inv-badge .n {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      color: var(--ember);
+      line-height: 1;
+    }
+    .inv-badge .l {
+      font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--silver-soft);
+    }
+
+    /* ── ESCASSEZ ── */
+    .inv-scarcity {
+      padding: clamp(4rem,8vw,7rem) 1.5rem;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(246,178,48,.15) 0%, transparent 60%),
+        linear-gradient(180deg, #061018 0%, #0a1420 100%);
+      text-align: center;
+      position: relative;
+      border-top: 1px solid rgba(246,178,48,.2);
+      border-bottom: 1px solid rgba(246,178,48,.2);
+    }
+    .inv-scarcity .label {
+      display:inline-flex; align-items:center; gap:.6rem;
+      padding:.5rem 1.2rem;
+      border:1px solid rgba(246,178,48,.4);
+      border-radius:999px;
+      font-size:.65rem; letter-spacing:.28em; text-transform:uppercase;
+      color: var(--ember);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: rgba(246,178,48,.06);
+    }
+    .inv-scarcity .label .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--ember);
+      box-shadow: 0 0 12px var(--ember);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.3); }
+    }
+    .inv-scarcity h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      max-width: 800px;
+      margin: 0 auto 1.2rem;
+      line-height: 1.15;
+    }
+    .inv-scarcity p {
+      max-width: 600px; margin: 0 auto 2.5rem;
+      color: var(--silver);
+      font-weight: 300;
+    }
+    .inv-months {
+      display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .inv-month {
+      padding: .8rem 1.4rem;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--glass-bd);
+      border-radius: 6px;
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--frost);
+      font-weight: 600;
+    }
+    .inv-month.hot {
+      background: rgba(246,178,48,.15);
+      border-color: rgba(246,178,48,.5);
+      color: var(--ember);
+    }
+
+    /* ── CTA FINAL ── */
+    .inv-final {
+      padding: clamp(6rem,12vw,11rem) 1.5rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(246,178,48,.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 0%, rgba(120,170,210,.10) 0%, transparent 50%),
+        linear-gradient(180deg, #0a1420 0%, #050a12 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .inv-final::before {
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(1px 1px at 60% 60%, rgba(255,255,255,.6), transparent 60%),
+        radial-gradient(2px 2px at 80% 20%, rgba(255,255,255,.8), transparent 60%),
+        radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,.5), transparent 60%);
+      opacity: .7;
+    }
+    .inv-final-c { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+    .inv-final h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, #c9dbe8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .inv-final p {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      max-width: 580px; margin: 0 auto 2.6rem;
+      color: var(--silver);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .inv-final .inv-hero-ctas { margin-bottom: 2rem; }
+    .inv-final .ps {
+      font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--silver-soft);
+      font-weight: 500;
+    }
+
+    /* ── HEADER OVERRIDE — escuro permanente nesta página ── */
+    body.inv-page .hdr { background: rgba(10,20,32,.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--glass-bd); }
+    body.inv-page .hdr .nav a, body.inv-page .hdr .logo { color: var(--frost); }
+    body.inv-page .hdr .hdr-btn { background: var(--ember); color: #0a1420; }
+    body.inv-page .hdr.hero-mode { background: transparent; border-bottom-color: transparent; }
+    body.inv-page .hdr.hero-mode .nav a { color: rgba(255,255,255,.9); }
+
+    @media (max-width: 768px) {
+      .inv-hero { min-height: 92vh; padding-top: 7rem; }
+      .inv-hero-meta { gap: 1.2rem; font-size: .65rem; }
+      .inv-badges { gap: 1.4rem; }
+    }
+  </style>
+</head>
+
+<body class="inv-page">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6C97M4C"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- ═══ HEADER (mesma estrutura do site) ═══ -->
+  <header class="hdr hero-mode" id="hdr">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo"><img src="/assets/img/logo.png" alt="Pousada Recanto dos Pôneis" class="logo-img"></a>
+      <nav class="nav">
+        <a href="../sobre/">Sobre</a>
+        <a href="../experiencia/">Experiência</a>
+        <a href="../acomodacoes/">Acomodações</a>
+        <a href="../galeria/">Galeria</a>
+        <a href="../localizacao/">Localização</a>
+        <a href="../blog/">Blog</a>
+        <a href="../contato/">Contato</a>
+      </nav>
+      <a href="#" onclick="openBooking();return false" class="hdr-btn">Reservar</a>
+      <button class="ham" id="ham" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobnav" id="mobnav">
+    <a href="../sobre/" onclick="closeMob()">Sobre</a>
+    <a href="../experiencia/" onclick="closeMob()">Experiência</a>
+    <a href="../acomodacoes/" onclick="closeMob()">Acomodações</a>
+    <a href="../galeria/" onclick="closeMob()">Galeria</a>
+    <a href="../localizacao/" onclick="closeMob()">Localização</a>
+    <a href="../blog/" onclick="closeMob()">Blog</a>
+    <a href="../contato/" onclick="closeMob()">Contato</a>
+    <a href="#" class="btn-gold" style="margin-top:1rem"
+       onclick="closeMob();openBooking();return false">Reservar Agora</a>
+  </div>
+
+  <main class="inv">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="inv-hero">
+      <div class="inv-snow" id="invSnow" aria-hidden="true"></div>
+      <div class="inv-hero-c">
+        <span class="inv-hero-overline"><i class="ph-thin ph-snowflake"></i> Temporada de Inverno · Serra Catarinense</span>
+        <h1>Entre geadas,<br>lareira e <em>céu estrelado</em>.</h1>
+        <p class="inv-hero-sub">O inverno mais inesquecível da sua vida acontece entre Urubici e Urupema — a região mais fria do Brasil. Aqui, o silêncio da serra encontra o calor da nossa lareira.</p>
+        <div class="inv-hero-ctas">
+          <a href="#" onclick="openBooking();return false" class="inv-btn-ember">
+            <i class="ph-thin ph-calendar-heart"></i> Reservar Estadia
+          </a>
+          <a href="#experiencia" class="inv-btn-glass">
+            <i class="ph-thin ph-arrow-down"></i> Viver a experiência
+          </a>
+        </div>
+        <div class="inv-hero-meta">
+          <span><i class="ph-thin ph-thermometer-cold"></i> Mínimas de -8°C</span>
+          <span><i class="ph-thin ph-cloud-snow"></i> Possibilidade de neve</span>
+          <span><i class="ph-thin ph-mountains"></i> Entre Urubici & Urupema</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DOBRA POÉTICA ═══ -->
+    <section class="inv-poetic">
+      <blockquote>
+        “Existe um lugar onde o frio<br>não é desconforto — é convite.”
+      </blockquote>
+      <span class="sig">— Recanto dos Pôneis · Inverno na Serra</span>
+    </section>
+
+    <!-- ═══ EXPERIÊNCIA DO INVERNO ═══ -->
+    <section class="inv-sec inv-exp-bg" id="experiencia">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Experiência sensorial</span>
+          <h2 class="inv-h2">O inverno que só a serra entrega</h2>
+          <p class="inv-lead">Cada manhã começa com a paisagem coberta de geada. Cada noite termina diante da lareira, com o céu mais limpo do Brasil sobre a sua cabeça.</p>
+        </div>
+
+        <div class="inv-sense-grid">
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-snowflake"></i></div>
+            <span class="stat">-8°</span>
+            <h3>Geadas intensas</h3>
+            <p>Paisagens congeladas ao amanhecer, gramado branco e ar cristalino — a Serra Catarinense é a região mais fria do Brasil.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-cloud-snow"></i></div>
+            <span class="stat">Neve</span>
+            <h3>Quando o Brasil vira inverno</h3>
+            <p>Em julho e agosto, Urubici e Urupema registram queda de neve quase todos os anos. Uma raridade que vale a viagem.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-fire"></i></div>
+            <span class="stat">Lareira</span>
+            <h3>Calor que aconchega</h3>
+            <p>Lareira acesa em cada chalé. Vinho, manta, e o som dos gravetos crepitando enquanto a serra dorme lá fora.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-star"></i></div>
+            <span class="stat">∞</span>
+            <h3>Céu estrelado</h3>
+            <p>Urubici tem um dos céus mais limpos do hemisfério sul. À noite, a via láctea aparece a olho nu sobre as araucárias.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-wine"></i></div>
+            <span class="stat">∙</span>
+            <h3>Vinho & gastronomia</h3>
+            <p>Tábua de queijos serranos, vinhos da região, sopas e fondues — o frio convida a comer devagar, em boa companhia.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-tree-evergreen"></i></div>
+            <span class="stat">Silêncio</span>
+            <h3>Natureza profunda</h3>
+            <p>Araucárias centenárias, mata atlântica de altitude e o silêncio raro de um lugar que ainda preserva o tempo lento da serra.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-sun-horizon"></i></div>
+            <span class="stat">5h45</span>
+            <h3>Amanhecer congelado</h3>
+            <p>O nascer do sol sobre a geada é um espetáculo de luz dourada cortando o branco — pode acreditar, vale o despertar cedo.</p>
+          </div>
+          <div class="inv-sense">
+            <div class="ico"><i class="ph-thin ph-coffee"></i></div>
+            <span class="stat">Café</span>
+            <h3>Manhãs lentas</h3>
+            <p>Café passado na hora, pão caseiro e a janela do chalé como moldura para um cenário que parece pintura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ O QUE TORNA ÚNICO ═══ -->
+    <section class="inv-sec inv-unique-bg">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Luxo silencioso</span>
+          <h2 class="inv-h2">Não é apenas hospedagem.<br>É um refúgio.</h2>
+          <p class="inv-lead">Tudo aqui foi pensado para que o inverno deixe de ser estação e vire memória — íntima, particular, sua.</p>
+        </div>
+
+        <div class="inv-unique-grid">
+          <div class="inv-u">
+            <div class="num">01</div>
+            <h3>Localização rara</h3>
+            <p>No coração da Serra Catarinense, entre Urubici e Urupema — as duas cidades mais frias do Brasil.</p>
+          </div>
+          <div class="inv-u">
+            <div class="num">02</div>
+            <h3>Privacidade absoluta</h3>
+            <p>Chalés afastados, sem vizinhos colados. Só você, sua família e o vento entre as araucárias.</p>
+          </div>
+          <div class="inv-u">
+            <div class="num">03</div>
+            <h3>Conforto rural</h3>
+            <p>Lareira, cozinha completa, churrasqueira e tudo que torna ficar dentro tão bom quanto sair.</p>
+          </div>
+          <div class="inv-u">
+            <div class="num">04</div>
+            <h3>Experiências inclusas</h3>
+            <p>Passeios a cavalo, contato com os pôneis e a vida do campo já fazem parte da sua diária.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EXPERIÊNCIAS DA REGIÃO ═══ -->
+    <section class="inv-sec inv-region-bg">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Roteiro do frio</span>
+          <h2 class="inv-h2">Tudo o que a serra<br>tem de mais belo, perto.</h2>
+          <p class="inv-lead">Da pousada, você está a poucos minutos dos cartões-postais mais cobiçados do inverno brasileiro.</p>
+        </div>
+
+        <div class="inv-region-grid">
+          <article class="inv-place p1">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Urubici · 50min</span>
+              <h3>Morro da Igreja</h3>
+              <p>O ponto habitado mais alto do sul do Brasil, com a icônica Pedra Furada e mínimas que chegam aos -10°C.</p>
+            </div>
+          </article>
+          <article class="inv-place p2">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Urubici · 35min</span>
+              <h3>Serra do Corvo Branco</h3>
+              <p>Cânion esculpido na pedra, paredões de 100 metros e, no inverno, paredes de gelo escorrendo pelas encostas.</p>
+            </div>
+          </article>
+          <article class="inv-place p3">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Urupema · 25min</span>
+              <h3>Cascatas Congeladas</h3>
+              <p>Em dias muito frios, as quedas d'água da região se transformam em esculturas de gelo — espetáculo raríssimo no Brasil.</p>
+            </div>
+          </article>
+          <article class="inv-place p4">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Urupema · 30min</span>
+              <h3>Mirante da Serra do Pinhal</h3>
+              <p>Vista 360° das araucárias cobertas de geada ao nascer do sol. Um dos amanheceres mais bonitos da serra.</p>
+            </div>
+          </article>
+          <article class="inv-place p5">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Urubici · 45min</span>
+              <h3>Cânion do Espraiado</h3>
+              <p>Trilha leve até um cânion verde profundo. Casais costumam vir aqui pelo silêncio absoluto da mata de altitude.</p>
+            </div>
+          </article>
+          <article class="inv-place p6">
+            <div class="ph-bg"></div>
+            <div class="ph-mist"></div>
+            <div class="inv-place-body">
+              <span class="tag">Região · próximo</span>
+              <h3>Vinícolas & cervejarias</h3>
+              <p>Vinhos de altitude e cervejas artesanais produzidas na própria serra — uma rota gastronômica entre as montanhas.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ACOMODAÇÕES ═══ -->
+    <section class="inv-sec inv-rooms-bg">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Onde você vai dormir</span>
+          <h2 class="inv-h2">Chalés feitos para o frio.</h2>
+          <p class="inv-lead">Cada chalé tem lareira própria, cozinha completa e a moldura perfeita para uma manhã coberta de geada.</p>
+        </div>
+
+        <div class="inv-rooms-grid">
+          <article class="inv-room r1">
+            <div class="ph"></div>
+            <div class="inv-room-body">
+              <span class="tag">Para casais</span>
+              <h3>Chalé Spa Sunset</h3>
+              <p>Refúgio romântico com hidromassagem privativa e vista para o pôr do sol sobre a serra.</p>
+            </div>
+          </article>
+          <article class="inv-room r2">
+            <div class="ph"></div>
+            <div class="inv-room-body">
+              <span class="tag">Para famílias</span>
+              <h3>Chalé dos Lagos</h3>
+              <p>Acolhedor e amplo, com vista direta para o lago — pesca e cavalgadas a poucos passos.</p>
+            </div>
+          </article>
+          <article class="inv-room r3">
+            <div class="ph"></div>
+            <div class="inv-room-body">
+              <span class="tag">Para famílias</span>
+              <h3>Chalé dos Pôneis</h3>
+              <p>O preferido das crianças, com os pôneis pastando no terreiro da frente.</p>
+            </div>
+          </article>
+          <article class="inv-room r4">
+            <div class="ph"></div>
+            <div class="inv-room-body">
+              <span class="tag">Para grupos · até 12</span>
+              <h3>Casarão</h3>
+              <p>Para reunir a família ou os amigos inteiros — espaço, lareira e mesa farta.</p>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:3.5rem">
+          <a href="../acomodacoes/" class="inv-btn-glass"><i class="ph-thin ph-arrow-right"></i> Ver todas as acomodações</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROVA SOCIAL ═══ -->
+    <section class="inv-sec inv-social-bg">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Quem já viveu</span>
+          <h2 class="inv-h2">O que dizem nossos hóspedes</h2>
+        </div>
+
+        <div class="inv-testi-grid">
+          <article class="inv-testi">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <blockquote>“Acordamos com a serra branca de geada. Foi a viagem mais bonita que minha família já fez. Vamos voltar todo inverno.”</blockquote>
+            <div class="who">
+              <div class="avatar"></div>
+              <div class="who-info"><strong>Família Becker</strong><span>Blumenau · SC</span></div>
+            </div>
+          </article>
+          <article class="inv-testi">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <blockquote>“A lareira acesa, o silêncio, o vinho. Um lugar que recebe a gente como amigo, não como cliente.”</blockquote>
+            <div class="who">
+              <div class="avatar"></div>
+              <div class="who-info"><strong>Marcela & Henrique</strong><span>Porto Alegre · RS</span></div>
+            </div>
+          </article>
+          <article class="inv-testi">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <blockquote>“Nevou na nossa estadia. As crianças nunca tinham visto neve. Memória para a vida inteira.”</blockquote>
+            <div class="who">
+              <div class="avatar"></div>
+              <div class="who-info"><strong>Família Sant'Anna</strong><span>Florianópolis · SC</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="inv-badges">
+          <div class="inv-badge"><span class="n">4.9</span><span class="l">Google · 200+ avaliações</span></div>
+          <div class="inv-badge"><span class="n">9.6</span><span class="l">Booking · Excepcional</span></div>
+          <div class="inv-badge"><span class="n">8 anos</span><span class="l">Recebendo hóspedes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ESCASSEZ ═══ -->
+    <section class="inv-scarcity">
+      <span class="label"><span class="dot"></span> Temporada de alta procura</span>
+      <h2>Datas de inverno se esgotam<br>rápido a cada ano.</h2>
+      <p>Julho e agosto — quando as geadas e a possibilidade de neve são máximas — costumam ficar sem disponibilidade já em maio. Garanta a sua agora.</p>
+      <div class="inv-months">
+        <span class="inv-month">Junho</span>
+        <span class="inv-month hot">Julho</span>
+        <span class="inv-month hot">Agosto</span>
+        <span class="inv-month">Setembro</span>
+      </div>
+      <a href="#" onclick="openBooking();return false" class="inv-btn-ember">
+        <i class="ph-thin ph-calendar-check"></i> Verificar disponibilidade
+      </a>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="inv-final">
+      <div class="inv-final-c">
+        <span class="inv-eyebrow">Sua estadia começa agora</span>
+        <h2>Não deixe esse inverno<br>passar despercebido.</h2>
+        <p>Há memórias que só nascem no frio: o cheiro da lareira, o som da geada quebrando sob os pés, o céu mais estrelado da sua vida. Tudo isso espera você na Serra Catarinense.</p>
+        <div class="inv-hero-ctas">
+          <a href="#" onclick="openBooking();return false" class="inv-btn-ember">
+            <i class="ph-thin ph-calendar-heart"></i> Reservar minha estadia
+          </a>
+          <a href="https://wa.me/554935127136" target="_blank" rel="noopener" class="inv-btn-glass">
+            <i class="ph-thin ph-whatsapp-logo"></i> Falar pelo WhatsApp
+          </a>
+        </div>
+        <p class="ps">Reserva direta · Melhor preço garantido · Resposta rápida</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <span class="logo">Recanto dos Pôneis</span>
+          <p>Sua experiência rural autêntica na Serra Catarinense. Chalés rústicos, passeios a cavalo e natureza de tirar o fôlego.</p>
+          <div class="ft-social">
+            <a href="https://www.instagram.com/pousadarecantodosponeis" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://wa.me/554935127136" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          </div>
+        </div>
+        <div class="ft-col">
+          <h4>Navegação</h4>
+          <a href="../sobre/">Sobre a Pousada</a>
+          <a href="../acomodacoes/">Acomodações</a>
+          <a href="../experiencia/">Experiência</a>
+          <a href="../galeria/">Galeria</a>
+          <a href="../localizacao/">Localização</a>
+          <a href="../contato/">Contato</a>
+        </div>
+        <div class="ft-col">
+          <h4>Contato</h4>
+          <span><i class="ph-thin ph-phone"></i> (49) 3512-7136</span>
+          <span><i class="ph-thin ph-envelope-simple"></i> recanto.poneis@gmail.com</span>
+          <span><i class="ph-thin ph-map-pin"></i> SC 370 Km 34, Rio do Tigre 001</span>
+          <span>Rio Rufino – SC</span>
+        </div>
+        <div class="ft-col">
+          <h4>Inverno na Serra</h4>
+          <span><i class="ph-thin ph-snowflake"></i> Geadas e neve possível</span>
+          <span><i class="ph-thin ph-mountains"></i> Entre Urubici & Urupema</span>
+          <span><i class="ph-thin ph-fire"></i> Lareira em todos os chalés</span>
+          <span><i class="ph-thin ph-star"></i> Céu estrelado raro</span>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <p>© 2025 Pousada Recanto dos Pôneis · Todos os direitos reservados</p>
+        <p>Desenvolvido por <a href="#" target="_blank">Komplexa Hotéis</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ WHATSAPP BOTÃO FLUTUANTE ═══ -->
+  <a class="wa-btn" href="https://wa.me/554935127136" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ═══ COOKIE BANNER ═══ -->
+  <div class="ck" id="cookieBanner">
+    <div class="ck-in">
+      <p>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a> e o uso de cookies.</p>
+      <div style="display:flex;gap:.6rem;flex-shrink:0">
+        <button class="btn-green" style="font-size:.72rem;padding:.5rem 1.2rem" onclick="acceptCookies()">Aceitar</button>
+        <button class="btn-outline" style="font-size:.72rem;padding:.5rem 1.2rem" onclick="declineCookies()">Recusar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    // ── Neve caindo no hero (procedural, sem libs) ──
+    (function(){
+      const layer = document.getElementById('invSnow');
+      if (!layer) return;
+      const flakes = ['❄','❅','❆','·','•'];
+      const count = window.innerWidth < 768 ? 28 : 60;
+      for (let i = 0; i < count; i++){
+        const s = document.createElement('span');
+        s.textContent = flakes[Math.floor(Math.random()*flakes.length)];
+        const size = 8 + Math.random()*14;
+        s.style.left = (Math.random()*100) + '%';
+        s.style.fontSize = size + 'px';
+        s.style.opacity = (0.4 + Math.random()*0.6);
+        s.style.animationDuration = (8 + Math.random()*14) + 's';
+        s.style.animationDelay = (-Math.random()*15) + 's';
+        layer.appendChild(s);
+      }
+    })();
+
+    // ── Reveal on scroll ──
+    (function(){
+      const els = document.querySelectorAll('.inv-sense, .inv-u, .inv-place, .inv-room, .inv-testi');
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(24px)';
+        el.style.transition = 'opacity .9s var(--ease), transform .9s var(--ease)';
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting){
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
