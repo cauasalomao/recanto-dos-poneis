@@ -76,32 +76,41 @@
       padding: 8rem 1.5rem 5rem;
       overflow: hidden;
       isolation: isolate;
-      background:
-        radial-gradient(ellipse at 50% 110%, rgba(246,178,48,.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 20% 30%, rgba(120,170,210,.18) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(180,210,240,.10) 0%, transparent 60%),
-        linear-gradient(180deg, #050a12 0%, #0a1420 40%, #142436 100%);
+      background: #050a12;
     }
+    .inv-hero-img {
+      position: absolute; inset: 0; z-index: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.55) saturate(.85) contrast(1.05);
+      opacity: 0;
+      transition: opacity 1.4s var(--ease);
+    }
+    .inv-hero-img.loaded { opacity: 1; }
     .inv-hero::before {
       content:"";
-      position:absolute; inset:0;
+      position: absolute; inset: 0; z-index: 1;
       background:
-        radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.9), transparent 60%),
-        radial-gradient(1.5px 1.5px at 28% 42%, rgba(255,255,255,.7), transparent 60%),
-        radial-gradient(1px 1px at 47% 12%, rgba(255,255,255,.9), transparent 60%),
-        radial-gradient(2px 2px at 63% 36%, rgba(255,255,255,.6), transparent 60%),
-        radial-gradient(1px 1px at 81% 22%, rgba(255,255,255,.8), transparent 60%),
-        radial-gradient(1.5px 1.5px at 92% 48%, rgba(255,255,255,.7), transparent 60%),
-        radial-gradient(1px 1px at 8% 62%, rgba(255,255,255,.6), transparent 60%),
-        radial-gradient(2px 2px at 38% 72%, rgba(255,255,255,.8), transparent 60%),
-        radial-gradient(1px 1px at 58% 82%, rgba(255,255,255,.5), transparent 60%),
-        radial-gradient(1.5px 1.5px at 74% 68%, rgba(255,255,255,.7), transparent 60%);
-      opacity:.85;
-      animation: twinkle 6s ease-in-out infinite alternate;
-      pointer-events:none;
-      z-index:0;
+        radial-gradient(ellipse at 50% 100%, rgba(246,178,48,.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 20%, rgba(20,36,54,.55) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(5,10,18,.45) 0%, rgba(10,20,32,.35) 40%, rgba(10,20,32,.85) 100%);
+      pointer-events: none;
     }
-    @keyframes twinkle { 0%{opacity:.5} 100%{opacity:.95} }
+    .inv-hero::after {
+      content:"";
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,.85), transparent 60%),
+        radial-gradient(1.5px 1.5px at 47% 12%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(1px 1px at 81% 22%, rgba(255,255,255,.75), transparent 60%),
+        radial-gradient(1.5px 1.5px at 92% 38%, rgba(255,255,255,.65), transparent 60%);
+      opacity: .7;
+      animation: twinkle 6s ease-in-out infinite alternate;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    @keyframes twinkle { 0%{opacity:.4} 100%{opacity:.85} }
 
     /* neve caindo */
     .inv-snow {
@@ -693,6 +702,7 @@
 
     <!-- ═══ HERO ═══ -->
     <section class="inv-hero">
+      <img src="../assets/img/inverno/hero-geada-chale.jpg" alt="Chalé da Pousada Recanto dos Pôneis com o gramado coberto de geada ao amanhecer, entre araucárias da Serra Catarinense" class="inv-hero-img" fetchpriority="high" onload="this.classList.add('loaded')">
       <div class="inv-snow" id="invSnow" aria-hidden="true"></div>
       <div class="inv-hero-c">
         <span class="inv-hero-overline"><i class="ph-thin ph-snowflake"></i> Temporada de Inverno · Serra Catarinense</span>
