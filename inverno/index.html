@@ -44,25 +44,28 @@
   </script>
 
   <style>
-    /* ═══ INVERNO — escopo local ═══ */
+    /* ═══ INVERNO — escopo local (paleta verde claro + branco + dourado) ═══ */
     .inv {
-      --ice:        #c9dbe8;
-      --frost:      #e8f1f8;
-      --midnight:   #0a1420;
-      --midnight-2: #142436;
-      --deep:       #061018;
+      --leaf:       #5b7a3d;
+      --leaf-deep:  #1a4922;
+      --leaf-soft:  #eaf1e2;
+      --leaf-mist:  #f5f8f2;
+      --cream:      #fbfaf6;
+      --paper:      #ffffff;
+      --ink:        #1f2a16;
+      --ink-soft:   #3c4a30;
       --ember:      #f6b230;
       --ember-soft: rgba(246,178,48,.85);
-      --silver:     rgba(232,241,248,.7);
-      --silver-soft:rgba(232,241,248,.45);
-      --glass:      rgba(255,255,255,.06);
-      --glass-bd:   rgba(255,255,255,.12);
-      color: var(--frost);
-      background: var(--midnight);
+      --silver:     #4a5a3d;
+      --silver-soft:#7a8b6b;
+      --glass:      rgba(91,122,61,.06);
+      --glass-bd:   rgba(91,122,61,.18);
+      color: var(--ink);
+      background: var(--paper);
       font-family: var(--font-body);
     }
-    .inv h1, .inv h2, .inv h3 { color: var(--frost); }
-    .inv p { color: var(--silver); }
+    .inv h1, .inv h2, .inv h3 { color: var(--ink); }
+    .inv p { color: var(--ink-soft); }
     .inv .overline { color: var(--ember); }
 
     /* ── HERO ── */
@@ -76,7 +79,7 @@
       padding: 8rem 1.5rem 5rem;
       overflow: hidden;
       isolation: isolate;
-      background: #050a12;
+      background: var(--leaf-deep);
     }
     .inv-hero-img {
       position: absolute; inset: 0; z-index: 0;
@@ -151,11 +154,11 @@
       line-height: 1.02;
       font-weight: 400;
       margin: 0 auto 1.5rem;
-      background: linear-gradient(180deg, #ffffff 0%, #c9dbe8 60%, #8ba8c4 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8f2 60%, #e0e7d6 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 60px rgba(201,219,232,.15);
+      text-shadow: 0 0 60px rgba(255,255,255,.18);
     }
     .inv-hero h1 em {
       font-style: normal;
@@ -168,10 +171,13 @@
       font-size: clamp(1rem, 1.4vw, 1.2rem);
       max-width: 620px;
       margin: 0 auto 2.6rem;
-      color: var(--silver);
+      color: rgba(255,255,255,.9);
       font-weight: 300;
       line-height: 1.75;
     }
+    .inv-hero-meta { color: rgba(255,255,255,.75); }
+    .inv-hero .inv-btn-glass { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.08); }
+    .inv-hero .inv-btn-glass:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
     .inv-hero-ctas {
       display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
       margin-bottom: 3rem;
@@ -224,17 +230,14 @@
       font-size: clamp(2.4rem, 5.5vw, 4.4rem);
       line-height: 1.08;
       margin-bottom: 1.2rem;
-      background: linear-gradient(180deg, #ffffff 0%, #b8cee0 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--leaf-deep);
     }
     .inv-lead {
       font-size: clamp(1rem, 1.2vw, 1.1rem);
       max-width: 620px;
-      color: var(--silver);
+      color: var(--ink-soft);
       line-height: 1.85;
-      font-weight: 300;
+      font-weight: 400;
     }
     .inv-c .inv-lead { margin: 0 auto; }
     .inv-c { text-align: center; }
@@ -243,8 +246,8 @@
 
     /* ── DOBRA POÉTICA ── */
     .inv-poetic {
-      padding: clamp(6rem,12vw,12rem) 1.5rem;
-      background: linear-gradient(180deg, #142436 0%, #0a1420 100%);
+      padding: clamp(5rem,9vw,9rem) 1.5rem;
+      background: var(--leaf-mist);
       text-align: center;
       position: relative;
     }
@@ -254,10 +257,7 @@
       line-height: 1.25;
       max-width: 900px;
       margin: 0 auto;
-      background: linear-gradient(180deg, #ffffff 0%, #8ba8c4 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--leaf-deep);
       font-weight: 400;
     }
     .inv-poetic .sig {
@@ -304,18 +304,18 @@
     }
     .inv-mood.m3 .inv-mood-ph {
       background:
-        radial-gradient(ellipse at 60% 60%, rgba(180,220,235,.45) 0%, transparent 55%),
-        linear-gradient(180deg, #0e1e2c 0%, #1f4763 40%, #4b87a9 70%, #c9dbe8 100%);
+        radial-gradient(ellipse at 60% 60%, rgba(216,227,200,.5) 0%, transparent 55%),
+        linear-gradient(180deg, #1a4922 0%, #3d5826 40%, #6b8a55 70%, #d8e3c8 100%);
     }
     .inv-mood.m4 .inv-mood-ph {
       background:
-        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.55) 0%, transparent 55%),
-        linear-gradient(180deg, #4a6680 0%, #8aa6bf 50%, #d7e4ee 100%);
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.65) 0%, transparent 55%),
+        linear-gradient(180deg, #6b8a55 0%, #b8c9a0 50%, #ffffff 100%);
     }
     .inv-mood::after {
       content:"";
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(6,16,24,.5) 78%, rgba(6,16,24,.92) 100%);
+      background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(26,73,34,.5) 78%, rgba(15,30,12,.95) 100%);
     }
     .inv-mood figcaption {
       position: absolute; z-index: 2;
@@ -352,8 +352,8 @@
     /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
     .inv-exp-bg {
       background:
-        radial-gradient(ellipse at 80% 0%, rgba(120,170,210,.10) 0%, transparent 50%),
-        linear-gradient(180deg, #0a1420 0%, #061018 100%);
+        radial-gradient(ellipse at 80% 0%, rgba(91,122,61,.06) 0%, transparent 50%),
+        var(--paper);
     }
     .inv-sense-grid {
       display: grid;
@@ -363,30 +363,30 @@
     .inv-sense {
       position: relative;
       padding: 2.5rem 1.8rem;
-      background: linear-gradient(160deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+      background: var(--paper);
       border: 1px solid var(--glass-bd);
       border-radius: 8px;
-      backdrop-filter: blur(10px);
       overflow: hidden;
-      transition: transform .5s var(--ease), border-color .5s, background .5s;
+      box-shadow: 0 4px 18px rgba(91,122,61,.05);
+      transition: transform .5s var(--ease), border-color .5s, box-shadow .5s;
     }
     .inv-sense::before {
       content: "";
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(246,178,48,.4), transparent);
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--ember), transparent);
       opacity: 0; transition: opacity .5s;
     }
     .inv-sense:hover {
       transform: translateY(-6px);
-      border-color: rgba(246,178,48,.3);
-      background: linear-gradient(160deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,.02) 100%);
+      border-color: rgba(246,178,48,.4);
+      box-shadow: 0 14px 36px rgba(91,122,61,.12);
     }
     .inv-sense:hover::before { opacity: 1; }
     .inv-sense .ico {
       width: 56px; height: 56px;
       display: flex; align-items: center; justify-content: center;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(246,178,48,.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(246,178,48,.22) 0%, transparent 70%);
       margin-bottom: 1.4rem;
       font-size: 1.8rem;
       color: var(--ember);
@@ -397,13 +397,13 @@
       font-weight: 600;
       letter-spacing: .02em;
       margin-bottom: .6rem;
-      color: var(--frost);
+      color: var(--leaf-deep);
     }
     .inv-sense p {
       font-size: .9rem;
       line-height: 1.65;
-      color: var(--silver);
-      font-weight: 300;
+      color: var(--ink-soft);
+      font-weight: 400;
     }
     .inv-sense .stat {
       display:block;
@@ -417,8 +417,8 @@
     /* ── ÚNICA (cards verticais elegantes) ── */
     .inv-unique-bg {
       background:
-        radial-gradient(ellipse at 0% 50%, rgba(246,178,48,.07) 0%, transparent 50%),
-        linear-gradient(180deg, #061018 0%, #0a1420 100%);
+        radial-gradient(ellipse at 0% 50%, rgba(246,178,48,.10) 0%, transparent 50%),
+        var(--leaf-mist);
     }
     .inv-unique-grid {
       display: grid;
@@ -428,21 +428,21 @@
     }
     .inv-u {
       padding: 3rem 2rem 2.4rem;
-      background: linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.01) 100%);
+      background: var(--paper);
       border: 1px solid var(--glass-bd);
       border-radius: 10px;
       text-align: center;
       position: relative;
-      transition: transform .5s var(--ease);
+      box-shadow: 0 4px 18px rgba(91,122,61,.06);
+      transition: transform .5s var(--ease), box-shadow .5s;
     }
-    .inv-u:hover { transform: translateY(-4px); }
+    .inv-u:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(91,122,61,.12); }
     .inv-u .num {
       font-family: var(--font-display);
       font-size: 3.2rem;
       color: var(--ember);
       line-height: 1;
       margin-bottom: 1rem;
-      opacity: .85;
     }
     .inv-u h3 {
       font-family: var(--font-body);
@@ -450,12 +450,13 @@
       font-weight: 600;
       margin-bottom: .8rem;
       letter-spacing: .02em;
+      color: var(--leaf-deep);
     }
-    .inv-u p { font-size: .88rem; line-height: 1.6; color: var(--silver); font-weight: 300; }
+    .inv-u p { font-size: .88rem; line-height: 1.6; color: var(--ink-soft); font-weight: 400; }
 
     /* ── REGIÃO — placeholder cinematográfico ── */
     .inv-region-bg {
-      background: linear-gradient(180deg, #0a1420 0%, #142436 100%);
+      background: var(--paper);
     }
     .inv-region-grid {
       display: grid;
@@ -477,17 +478,17 @@
     .inv-place .ph-bg {
       position: absolute; inset: 0; z-index: 0;
     }
-    /* gradientes únicos por card — cada um sugere um lugar */
-    .inv-place.p1 .ph-bg { background: linear-gradient(160deg, #1a3a5c 0%, #3a6890 50%, #c9dbe8 100%); }
-    .inv-place.p2 .ph-bg { background: linear-gradient(180deg, #0a1420 0%, #2e4f6e 60%, #e8f1f8 100%); }
-    .inv-place.p3 .ph-bg { background: linear-gradient(200deg, #233f5e 0%, #5a7d9c 50%, #ffffff 100%); }
-    .inv-place.p4 .ph-bg { background: linear-gradient(170deg, #0a1420 0%, #1d3b58 50%, #8fb0cc 100%); }
-    .inv-place.p5 .ph-bg { background: linear-gradient(190deg, #1c3550 0%, #4a6f93 60%, #c9dbe8 100%); }
-    .inv-place.p6 .ph-bg { background: linear-gradient(150deg, #14283e 0%, #345d80 50%, #d0e2f0 100%); }
+    /* gradientes únicos por card — verde serra → branco geada */
+    .inv-place.p1 .ph-bg { background: linear-gradient(160deg, #1a4922 0%, #5b7a3d 50%, #d8e3c8 100%); }
+    .inv-place.p2 .ph-bg { background: linear-gradient(180deg, #1f2a16 0%, #4a6b32 60%, #eaf1e2 100%); }
+    .inv-place.p3 .ph-bg { background: linear-gradient(200deg, #233e1d 0%, #6b8a55 50%, #ffffff 100%); }
+    .inv-place.p4 .ph-bg { background: linear-gradient(170deg, #1a4922 0%, #3d5826 50%, #b8c9a0 100%); }
+    .inv-place.p5 .ph-bg { background: linear-gradient(190deg, #1c3618 0%, #6b8a55 60%, #d8e3c8 100%); }
+    .inv-place.p6 .ph-bg { background: linear-gradient(150deg, #2a3a1f 0%, #5b7a3d 50%, #e8efd8 100%); }
     .inv-place::after {
       content:"";
       position:absolute; inset:0; z-index:1;
-      background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(6,16,24,.45) 70%, rgba(6,16,24,.92) 100%);
+      background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(26,73,34,.45) 70%, rgba(15,30,12,.95) 100%);
     }
     .inv-place .ph-mist {
       position: absolute; inset: 0; z-index: 1;
@@ -518,13 +519,13 @@
     .inv-place-body p {
       font-size: .85rem;
       line-height: 1.55;
-      color: var(--silver);
+      color: rgba(255,255,255,.85);
       font-weight: 300;
     }
 
     /* ── ACOMODAÇÕES PLACEHOLDER ── */
     .inv-rooms-bg {
-      background: linear-gradient(180deg, #142436 0%, #0a1420 100%);
+      background: var(--leaf-mist);
     }
     .inv-rooms-grid {
       display: grid;
@@ -536,8 +537,11 @@
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid var(--glass-bd);
-      background: rgba(255,255,255,.02);
+      background: var(--paper);
+      box-shadow: 0 4px 18px rgba(91,122,61,.06);
+      transition: transform .5s var(--ease), box-shadow .5s;
     }
+    .inv-room:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(91,122,61,.12); }
     .inv-room .ph {
       aspect-ratio: 4 / 3;
       position: relative;
@@ -546,17 +550,17 @@
     .inv-room .ph::before {
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(160deg, #1d3756 0%, #3a5d80 50%, #8fb0cc 100%);
+      background: linear-gradient(160deg, #1a4922 0%, #5b7a3d 50%, #d8e3c8 100%);
     }
-    .inv-room.r2 .ph::before { background: linear-gradient(160deg, #0a1420 0%, #2c4d70 50%, #c9dbe8 100%); }
-    .inv-room.r3 .ph::before { background: linear-gradient(160deg, #14283e 0%, #4a6f93 50%, #d0e2f0 100%); }
-    .inv-room.r4 .ph::before { background: linear-gradient(160deg, #233f5e 0%, #5a7d9c 50%, #e8f1f8 100%); }
+    .inv-room.r2 .ph::before { background: linear-gradient(160deg, #1f2a16 0%, #4a6b32 50%, #eaf1e2 100%); }
+    .inv-room.r3 .ph::before { background: linear-gradient(160deg, #233e1d 0%, #6b8a55 50%, #ffffff 100%); }
+    .inv-room.r4 .ph::before { background: linear-gradient(160deg, #2a3a1f 0%, #5b7a3d 50%, #e8efd8 100%); }
     .inv-room .ph::after {
       content:"";
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.18) 0%, transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(246,178,48,.12) 0%, transparent 50%);
+        radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.20) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(246,178,48,.18) 0%, transparent 50%);
       filter: blur(10px);
     }
     .inv-room-body { padding: 1.8rem 1.6rem 2rem; }
@@ -568,14 +572,15 @@
       font-family: var(--font-display);
       font-size: 1.8rem;
       margin: .4rem 0 .8rem;
+      color: var(--leaf-deep);
     }
-    .inv-room-body p { font-size: .88rem; line-height: 1.6; color: var(--silver); font-weight: 300; }
+    .inv-room-body p { font-size: .88rem; line-height: 1.6; color: var(--ink-soft); font-weight: 400; }
 
     /* ── PROVA SOCIAL ── */
     .inv-social-bg {
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(246,178,48,.05) 0%, transparent 50%),
-        linear-gradient(180deg, #0a1420 0%, #061018 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(246,178,48,.07) 0%, transparent 50%),
+        var(--paper);
     }
     .inv-testi-grid {
       display: grid;
@@ -585,18 +590,20 @@
     }
     .inv-testi {
       padding: 2.4rem 2rem;
-      background: linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
+      background: var(--leaf-mist);
       border: 1px solid var(--glass-bd);
       border-radius: 10px;
       position: relative;
+      transition: transform .5s var(--ease), box-shadow .5s;
     }
+    .inv-testi:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(91,122,61,.12); }
     .inv-testi .stars { color: var(--ember); font-size: 1rem; letter-spacing: .15em; margin-bottom: 1rem; }
     .inv-testi blockquote {
       font-style: italic;
       font-size: 1rem;
       line-height: 1.7;
-      color: var(--frost);
-      font-weight: 300;
+      color: var(--ink);
+      font-weight: 400;
       margin-bottom: 1.5rem;
     }
     .inv-testi .who {
@@ -607,11 +614,11 @@
     .inv-testi .avatar {
       width: 42px; height: 42px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #345d80 0%, #c9dbe8 100%);
+      background: linear-gradient(135deg, #5b7a3d 0%, #d8e3c8 100%);
       flex-shrink: 0;
     }
     .inv-testi .who-info { font-size: .8rem; }
-    .inv-testi .who-info strong { display: block; color: var(--frost); font-weight: 600; }
+    .inv-testi .who-info strong { display: block; color: var(--leaf-deep); font-weight: 600; }
     .inv-testi .who-info span { color: var(--silver-soft); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
 
     .inv-badges {
@@ -622,7 +629,7 @@
     }
     .inv-badge {
       display: flex; flex-direction: column; align-items: center; gap: .4rem;
-      color: var(--silver);
+      color: var(--ink-soft);
     }
     .inv-badge .n {
       font-family: var(--font-display);
@@ -639,12 +646,12 @@
     .inv-scarcity {
       padding: clamp(4rem,8vw,7rem) 1.5rem;
       background:
-        radial-gradient(ellipse at 50% 50%, rgba(246,178,48,.15) 0%, transparent 60%),
-        linear-gradient(180deg, #061018 0%, #0a1420 100%);
+        radial-gradient(ellipse at 50% 50%, rgba(246,178,48,.18) 0%, transparent 60%),
+        var(--leaf-mist);
       text-align: center;
       position: relative;
-      border-top: 1px solid rgba(246,178,48,.2);
-      border-bottom: 1px solid rgba(246,178,48,.2);
+      border-top: 1px solid rgba(246,178,48,.3);
+      border-bottom: 1px solid rgba(246,178,48,.3);
     }
     .inv-scarcity .label {
       display:inline-flex; align-items:center; gap:.6rem;
@@ -673,11 +680,12 @@
       max-width: 800px;
       margin: 0 auto 1.2rem;
       line-height: 1.15;
+      color: var(--leaf-deep);
     }
     .inv-scarcity p {
       max-width: 600px; margin: 0 auto 2.5rem;
-      color: var(--silver);
-      font-weight: 300;
+      color: var(--ink-soft);
+      font-weight: 400;
     }
     .inv-months {
       display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap;
@@ -685,17 +693,17 @@
     }
     .inv-month {
       padding: .8rem 1.4rem;
-      background: rgba(255,255,255,.05);
+      background: var(--paper);
       border: 1px solid var(--glass-bd);
       border-radius: 6px;
       font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--frost);
+      color: var(--ink);
       font-weight: 600;
     }
     .inv-month.hot {
-      background: rgba(246,178,48,.15);
-      border-color: rgba(246,178,48,.5);
-      color: var(--ember);
+      background: rgba(246,178,48,.18);
+      border-color: rgba(246,178,48,.55);
+      color: #8a5a08;
     }
 
     /* ── CTA FINAL ── */
@@ -703,21 +711,11 @@
       padding: clamp(6rem,12vw,11rem) 1.5rem;
       text-align: center;
       background:
-        radial-gradient(ellipse at 50% 100%, rgba(246,178,48,.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 50% 0%, rgba(120,170,210,.10) 0%, transparent 50%),
-        linear-gradient(180deg, #0a1420 0%, #050a12 100%);
+        radial-gradient(ellipse at 50% 100%, rgba(246,178,48,.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 0%, rgba(91,122,61,.10) 0%, transparent 50%),
+        var(--paper);
       position: relative;
       overflow: hidden;
-    }
-    .inv-final::before {
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,.7), transparent 60%),
-        radial-gradient(1px 1px at 60% 60%, rgba(255,255,255,.6), transparent 60%),
-        radial-gradient(2px 2px at 80% 20%, rgba(255,255,255,.8), transparent 60%),
-        radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,.5), transparent 60%);
-      opacity: .7;
     }
     .inv-final-c { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
     .inv-final h2 {
@@ -725,19 +723,24 @@
       font-size: clamp(2.6rem, 6vw, 5rem);
       line-height: 1.05;
       margin-bottom: 1.5rem;
-      background: linear-gradient(180deg, #ffffff 0%, #c9dbe8 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: var(--leaf-deep);
     }
     .inv-final p {
       font-size: clamp(1rem, 1.3vw, 1.15rem);
       max-width: 580px; margin: 0 auto 2.6rem;
-      color: var(--silver);
-      font-weight: 300;
+      color: var(--ink-soft);
+      font-weight: 400;
       line-height: 1.75;
     }
     .inv-final .inv-hero-ctas { margin-bottom: 2rem; }
+    .inv-final .inv-btn-glass {
+      background: var(--paper);
+      color: var(--leaf-deep);
+      border: 1px solid var(--leaf);
+    }
+    .inv-final .inv-btn-glass:hover {
+      background: var(--leaf-soft);
+    }
     .inv-final .ps {
       font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
       color: var(--silver-soft);
