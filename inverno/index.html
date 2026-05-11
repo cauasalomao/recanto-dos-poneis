@@ -669,12 +669,8 @@
     }
 
     /* ── HEADER OVERRIDE — escuro permanente nesta página ── */
-    body.inv-page .hdr { background: rgba(10,20,32,.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--glass-bd); }
-    body.inv-page .hdr .nav a, body.inv-page .hdr .logo { color: var(--frost); }
-    body.inv-page .hdr .hdr-btn { background: var(--ember); color: #0a1420; }
-    body.inv-page .hdr.hero-mode { background: transparent; border-bottom-color: transparent; }
-    body.inv-page .hdr .nav, body.inv-page .hdr .ham, body.inv-page .mobnav { display: none !important; }
-    body.inv-page .hdr .hdr-inner { justify-content: space-between; }
+    body.inv-page .hdr, body.inv-page .mobnav { display: none !important; }
+    body.inv-page .inv-hero { padding-top: 5rem; }
 
     @media (max-width: 768px) {
       .inv-hero { min-height: 92vh; padding-top: 7rem; }
@@ -690,13 +686,8 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6C97M4C"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- ═══ HEADER MINIMAL — só logo e CTA ═══ -->
-  <header class="hdr hero-mode inv-hdr" id="hdr">
-    <div class="hdr-inner">
-      <a href="../index.html" class="logo"><img src="/assets/img/logo.png" alt="Pousada Recanto dos Pôneis" class="logo-img"></a>
-      <a href="#" onclick="openBooking();return false" class="hdr-btn">Reservar</a>
-    </div>
-  </header>
+  <!-- Header removido: LP sem navegação e sem logo -->
+  <header class="hdr" id="hdr" hidden></header>
 
   <main class="inv">
 
