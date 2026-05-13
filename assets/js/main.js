@@ -245,6 +245,23 @@ function updateChildAges() {
   }
 }
 
+function updateChildLimit() {
+  const MAX_TOTAL = 12;
+  const adultsSel = document.getElementById('bk-adults');
+  const childrenSel = document.getElementById('bk-children');
+  if (!adultsSel || !childrenSel) return;
+  const adults = parseInt(adultsSel.value || '1');
+  const maxKids = Math.max(0, MAX_TOTAL - adults);
+  const currentKids = parseInt(childrenSel.value || '0');
+  Array.from(childrenSel.options).forEach(opt => {
+    opt.disabled = parseInt(opt.value) > maxKids;
+  });
+  if (currentKids > maxKids) {
+    childrenSel.value = String(maxKids);
+    updateChildAges();
+  }
+}
+
 function submitBooking(e) {
   e.preventDefault();
   const ci = document.getElementById('bk-checkin').value;
@@ -289,12 +306,19 @@ function submitBooking(e) {
           <div class="bk-row">
             <div class="fg">
               <label>Adultos *</label>
-              <select id="bk-adults">
+              <select id="bk-adults" onchange="updateChildLimit()">
                 <option value="1">1 adulto</option>
                 <option value="2" selected>2 adultos</option>
                 <option value="3">3 adultos</option>
                 <option value="4">4 adultos</option>
                 <option value="5">5 adultos</option>
+                <option value="6">6 adultos</option>
+                <option value="7">7 adultos</option>
+                <option value="8">8 adultos</option>
+                <option value="9">9 adultos</option>
+                <option value="10">10 adultos</option>
+                <option value="11">11 adultos</option>
+                <option value="12">12 adultos</option>
               </select>
             </div>
             <div class="fg">
@@ -304,6 +328,14 @@ function submitBooking(e) {
                 <option value="1">1 criança</option>
                 <option value="2">2 crianças</option>
                 <option value="3">3 crianças</option>
+                <option value="4">4 crianças</option>
+                <option value="5">5 crianças</option>
+                <option value="6">6 crianças</option>
+                <option value="7">7 crianças</option>
+                <option value="8">8 crianças</option>
+                <option value="9">9 crianças</option>
+                <option value="10">10 crianças</option>
+                <option value="11">11 crianças</option>
               </select>
             </div>
           </div>

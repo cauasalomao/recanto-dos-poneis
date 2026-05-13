@@ -64,6 +64,8 @@
       background: var(--paper);
       font-family: var(--font-body);
     }
+    .inv [id] { scroll-margin-top: 90px; }
+
     .inv h1, .inv h2, .inv h3 { color: var(--ink); }
     .inv p { color: var(--ink-soft); }
     .inv .overline { color: var(--ember); }
@@ -278,50 +280,111 @@
     }
 
     /* ── 4 PLACEHOLDERS (Lareira / Vinho / Hidromassagem / Geada) ── */
+    .inv-mood-head {
+      text-align: center;
+      padding: clamp(1.8rem, 3.5vw, 3rem) 1.5rem clamp(2.8rem, 5.5vw, 4.5rem);
+      background: var(--leaf-deep, #1a4922);
+    }
+    .inv-mood-head .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: .72rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--ember-soft);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .inv-mood-head h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5.2vw, 4rem);
+      line-height: 1.1;
+      color: #fff;
+      max-width: 18ch;
+      margin: 0 auto;
+    }
+    .inv-mood-head h2 em {
+      font-style: italic;
+      color: var(--ember);
+    }
+    .inv-mood-wrap {
+      position: relative;
+      background: var(--leaf-deep, #1a4922);
+    }
+    .inv-mood-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: var(--leaf-deep);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      z-index: 5;
+      box-shadow: 0 6px 24px rgba(0,0,0,.28);
+      transition: background .25s, transform .25s, opacity .25s;
+    }
+    .inv-mood-arrow:hover { background: var(--ember); color: var(--leaf-deep); transform: translateY(-50%) scale(1.06); }
+    .inv-mood-arrow.prev { left: clamp(.5rem, 1.5vw, 1.2rem); }
+    .inv-mood-arrow.next { right: clamp(.5rem, 1.5vw, 1.2rem); }
+    .inv-mood-arrow[disabled] { opacity: .35; cursor: default; pointer-events: none; }
+    @media (max-width: 900px) { .inv-mood-arrow { display: none; } }
     .inv-mood-grid {
       width: 100%;
       margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      padding: 0 clamp(1.5rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
+      display: flex;
+      gap: clamp(.75rem, 1.5vw, 1.25rem);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-padding-left: clamp(1.5rem, 4vw, 3.5rem);
+      background: var(--leaf-deep, #1a4922);
     }
+    .inv-mood-grid::-webkit-scrollbar { display: none; }
     .inv-mood {
       position: relative;
+      flex: 0 0 calc((100% - clamp(1.5rem, 4vw, 3.5rem) * 2 - clamp(.75rem, 1.5vw, 1.25rem) * 3) / 4);
       aspect-ratio: 3 / 4;
       overflow: hidden;
       border: none;
+      border-radius: clamp(10px, 1.2vw, 16px);
       isolation: isolate;
       cursor: default;
+      scroll-snap-align: start;
       transition: transform .6s var(--ease);
     }
+    .inv-mood:last-child { margin-right: clamp(1.5rem, 4vw, 3.5rem); }
     .inv-mood:hover .inv-mood-ph { transform: scale(1.04); }
     .inv-mood-ph { transition: transform 1s var(--ease); }
-    .inv-mood-ph { position: absolute; inset: 0; z-index: 0; }
-    .inv-mood.m1 .inv-mood-ph {
-      background:
-        radial-gradient(ellipse at 50% 80%, rgba(255,170,60,.45) 0%, transparent 55%),
-        linear-gradient(160deg, #2a1108 0%, #5e2412 40%, #c2541a 70%, #f6b230 100%);
+    .inv-mood-ph {
+      position: absolute; inset: 0; z-index: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    .inv-mood.m2 .inv-mood-ph {
-      background:
-        radial-gradient(ellipse at 50% 50%, rgba(120,20,40,.5) 0%, transparent 60%),
-        linear-gradient(170deg, #1a0a14 0%, #3d0e22 40%, #6e1530 70%, #a83a55 100%);
-    }
-    .inv-mood.m3 .inv-mood-ph {
-      background:
-        radial-gradient(ellipse at 60% 60%, rgba(216,227,200,.5) 0%, transparent 55%),
-        linear-gradient(180deg, #1a4922 0%, #3d5826 40%, #6b8a55 70%, #d8e3c8 100%);
-    }
-    .inv-mood.m4 .inv-mood-ph {
-      background:
-        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.65) 0%, transparent 55%),
-        linear-gradient(180deg, #6b8a55 0%, #b8c9a0 50%, #ffffff 100%);
-    }
+    .inv-mood.m1 .inv-mood-ph { background-image: url('../assets/img/inverno/mood-lareira.jpg'); }
+    .inv-mood.m2 .inv-mood-ph { background-image: url('../assets/img/inverno/mood-vinho.jpg'); }
+    .inv-mood.m3 .inv-mood-ph { background-image: url('../assets/img/inverno/mood-hidromassagem.jpg'); }
+    .inv-mood.m4 .inv-mood-ph { background-image: url('../assets/img/inverno/mood-geada.jpg'); }
+    .inv-mood.m5 .inv-mood-ph { background-image: url('../assets/img/inverno/exp-ceu-estrelado.jpg'); }
+    .inv-mood.m6 .inv-mood-ph { background-image: url('../assets/img/inverno/exp-paisagens.jpg'); }
+    .inv-mood.m7 .inv-mood-ph { background-image: url('../assets/img/inverno/exp-visuais-unicos.jpg'); }
+    .inv-mood.m8 .inv-mood-ph { background-image: url('../assets/img/inverno/exp-fondue.jpg'); }
+    .inv-mood.m9 .inv-mood-ph { background-image: url('../assets/img/inverno/exp-temperaturas-negativas.jpg'); }
     .inv-mood::after {
       content:"";
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(26,73,34,.5) 78%, rgba(15,30,12,.95) 100%);
+      background: linear-gradient(180deg, transparent 0%, transparent 55%, rgba(0,0,0,.45) 85%, rgba(0,0,0,.78) 100%);
     }
     .inv-mood figcaption {
       position: absolute; z-index: 2;
@@ -348,12 +411,22 @@
     }
 
     @media (max-width: 900px) {
-      .inv-mood-grid { grid-template-columns: repeat(2, 1fr); }
-      .inv-mood { aspect-ratio: 1 / 1; }
+      .inv-mood {
+        flex: 0 0 calc((100% - clamp(1.5rem, 4vw, 3.5rem) * 2 - .75rem * 2) / 2.4);
+        aspect-ratio: 4 / 5;
+      }
     }
-    @media (max-width: 480px) {
-      .inv-mood-grid { grid-template-columns: 1fr; }
-      .inv-mood { aspect-ratio: 16 / 10; }
+    @media (max-width: 640px) {
+      .inv-mood-grid {
+        padding: 0 1.25rem clamp(2rem, 5vw, 3rem);
+        gap: .75rem;
+        scroll-padding-left: 1.25rem;
+      }
+      .inv-mood {
+        flex: 0 0 78%;
+        aspect-ratio: 4 / 5;
+      }
+      .inv-mood:last-child { margin-right: 1.25rem; }
     }
 
     /* ── GALERIA DE ATMOSFERA ── */
@@ -384,14 +457,19 @@
       pointer-events: none;
     }
     /* placeholders com gradientes únicos — paisagens da serra no inverno */
-    .inv-g.g1 .ph { background: linear-gradient(170deg, #1a4922 0%, #5b7a3d 50%, #e8efd8 100%); }
-    .inv-g.g2 .ph { background: linear-gradient(200deg, #2a3a1f 0%, #6b8a55 60%, #ffffff 100%); }
-    .inv-g.g3 .ph { background: linear-gradient(160deg, #4a3018 0%, #c2541a 50%, #f6b230 100%); }
-    .inv-g.g4 .ph { background: linear-gradient(180deg, #1f2a16 0%, #3d5826 50%, #b8c9a0 100%); }
-    .inv-g.g5 .ph { background: linear-gradient(150deg, #1c3618 0%, #6b8a55 50%, #d8e3c8 100%); }
-    .inv-g.g6 .ph { background: linear-gradient(190deg, #233e1d 0%, #5b7a3d 60%, #eaf1e2 100%); }
-    .inv-g.g7 .ph { background: linear-gradient(170deg, #2a1108 0%, #5e2412 40%, #c2541a 100%); }
-    .inv-g.g8 .ph { background: linear-gradient(180deg, #6b8a55 0%, #b8c9a0 50%, #ffffff 100%); }
+    .inv-g .ph {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .inv-g.g1 .ph { background-image: url('../assets/img/inverno/galeria/gal-01.jpg'); }
+    .inv-g.g2 .ph { background-image: url('../assets/img/inverno/galeria/gal-02.jpg'); }
+    .inv-g.g3 .ph { background-image: url('../assets/img/inverno/galeria/gal-03.jpg'); }
+    .inv-g.g4 .ph { background-image: url('../assets/img/inverno/galeria/gal-04.jpg'); }
+    .inv-g.g5 .ph { background-image: url('../assets/img/inverno/galeria/gal-05.jpg'); }
+    .inv-g.g6 .ph { background-image: url('../assets/img/inverno/galeria/gal-06.jpg'); }
+    .inv-g.g7 .ph { background-image: url('../assets/img/inverno/galeria/gal-07.jpg'); }
+    .inv-g.g8 .ph { background-image: url('../assets/img/inverno/galeria/gal-08.jpg'); }
 
     /* mosaico fechado em 4 col x 4 row (16 celulas, encaixe perfeito) */
     .inv-g.g1 { grid-column: 1 / span 2; grid-row: 1 / span 2; } /* big top-left */
@@ -400,8 +478,7 @@
     .inv-g.g4 { grid-column: 3 / span 2; grid-row: 2 / span 1; } /* wide */
     .inv-g.g5 { grid-column: 1 / span 2; grid-row: 3 / span 1; } /* wide */
     .inv-g.g6 { grid-column: 3 / span 2; grid-row: 3 / span 2; } /* big bottom-right */
-    .inv-g.g7 { grid-column: 1 / span 1; grid-row: 4 / span 1; }
-    .inv-g.g8 { grid-column: 2 / span 1; grid-row: 4 / span 1; }
+    .inv-g.g7 { grid-column: 1 / span 2; grid-row: 4 / span 1; }
 
     @media (max-width: 900px) {
       .inv-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
@@ -415,6 +492,229 @@
       .inv-g, .inv-g.g1, .inv-g.g2, .inv-g.g3, .inv-g.g4, .inv-g.g5, .inv-g.g6, .inv-g.g7, .inv-g.g8 {
         grid-column: 1; grid-row: auto;
       }
+      .inv-g.g1, .inv-g.g2 { display: none; }
+    }
+
+    /* ── EXPERIÊNCIAS VISUAIS (3 fotos grandes) ── */
+    .inv-exp-strip-bg { background: var(--leaf-deep, #1a4922); }
+    .inv-exp-strip-head {
+      text-align: center;
+      padding: clamp(2.5rem, 5vw, 4.5rem) 1.5rem clamp(2rem, 4vw, 3rem);
+    }
+    .inv-exp-strip-head .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: .72rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--ember-soft);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .inv-exp-strip-head h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4.8vw, 3.6rem);
+      line-height: 1.1;
+      color: #fff;
+      max-width: 22ch;
+      margin: 0 auto;
+    }
+    .inv-exp-strip-head h2 em { font-style: italic; color: var(--ember); }
+    .inv-exp-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(.75rem, 1.5vw, 1.25rem);
+      padding: 0 clamp(1.5rem, 4vw, 3.5rem) clamp(2.5rem, 5vw, 4rem);
+    }
+    .inv-exp-tile {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: clamp(10px, 1.2vw, 16px);
+      isolation: isolate;
+    }
+    .inv-exp-tile .ph {
+      position: absolute; inset: 0; z-index: 0;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+      transition: transform 1s var(--ease);
+    }
+    .inv-exp-tile:hover .ph { transform: scale(1.04); }
+    .inv-exp-tile.e1 .ph { background-image: url('../assets/img/inverno/exp-ceu-estrelado.jpg'); }
+    .inv-exp-tile.e2 .ph { background-image: url('../assets/img/inverno/exp-paisagens.jpg'); }
+    .inv-exp-tile.e3 .ph { background-image: url('../assets/img/inverno/exp-visuais-unicos.jpg'); }
+    .inv-exp-tile::after {
+      content: "";
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, transparent 45%, rgba(0,0,0,.45) 80%, rgba(0,0,0,.85) 100%);
+    }
+    .inv-exp-tile figcaption {
+      position: absolute; z-index: 2;
+      left: 0; right: 0; bottom: 0;
+      padding: 1.8rem 1.6rem;
+      color: #fff;
+    }
+    .inv-exp-tile figcaption .ico {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--ember);
+      font-size: 1.2rem;
+      margin-bottom: .9rem;
+    }
+    .inv-exp-tile figcaption h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+      line-height: 1.05;
+      margin-bottom: .5rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,.45);
+    }
+    .inv-exp-tile figcaption p {
+      font-size: .85rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,.88);
+      font-weight: 300;
+    }
+    @media (max-width: 900px) {
+      .inv-exp-strip { grid-template-columns: repeat(2, 1fr); }
+      .inv-exp-tile.e3 { grid-column: span 2; aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 640px) {
+      .inv-exp-strip {
+        display: flex;
+        grid-template-columns: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 0 1.25rem clamp(2rem, 5vw, 3rem);
+        gap: .75rem;
+        scroll-padding-left: 1.25rem;
+      }
+      .inv-exp-strip::-webkit-scrollbar { display: none; }
+      .inv-exp-tile,
+      .inv-exp-tile.e3 {
+        flex: 0 0 82%;
+        aspect-ratio: 4 / 5;
+        scroll-snap-align: start;
+      }
+      .inv-exp-tile:last-child { margin-right: 1.25rem; }
+    }
+
+    /* ── POPUP GALERIA COMPLETA ── */
+    .inv-gal-modal {
+      position: fixed; inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .inv-gal-modal.open { display: flex; }
+    .inv-gal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(10, 20, 12, .85);
+      backdrop-filter: blur(6px);
+    }
+    .inv-gal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      z-index: 3;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.4);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: background .25s, transform .25s;
+    }
+    .inv-gal-close:hover { background: var(--ember); color: var(--leaf-deep); transform: scale(1.06); }
+    .inv-gal-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2.5rem) 3rem;
+      overflow-y: auto;
+      color: #fff;
+    }
+    .inv-gal-head { text-align: center; margin-bottom: 2.5rem; }
+    .inv-gal-head .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: .7rem; letter-spacing: .32em; text-transform: uppercase;
+      color: var(--ember); font-weight: 600;
+      margin-bottom: .8rem;
+    }
+    .inv-gal-head h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      color: #fff; line-height: 1.1;
+    }
+    .inv-gal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: .6rem;
+    }
+    .inv-gal-thumb {
+      aspect-ratio: 1 / 1;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+      border-radius: 6px;
+      cursor: zoom-in;
+      transition: transform .35s var(--ease), box-shadow .35s;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .inv-gal-thumb:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+    @media (max-width: 640px) {
+      .inv-gal-grid { grid-template-columns: repeat(2, 1fr); gap: .35rem; }
+    }
+    /* Viewer (foto cheia) */
+    .inv-gal-viewer {
+      position: absolute; inset: 0;
+      z-index: 4;
+      display: none;
+      align-items: center; justify-content: center;
+      background: rgba(0,0,0,.94);
+    }
+    .inv-gal-viewer.open { display: flex; }
+    .inv-gal-viewer img {
+      max-width: 92vw;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.7);
+    }
+    .inv-gal-vbtn {
+      position: absolute;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: background .25s, transform .25s;
+      z-index: 5;
+    }
+    .inv-gal-vbtn:hover { background: var(--ember); color: var(--leaf-deep); transform: scale(1.06); }
+    .inv-gal-vbtn.close { top: 1rem; right: 1rem; }
+    .inv-gal-vbtn.prev { left: clamp(.5rem, 2vw, 1.5rem); top: 50%; transform: translateY(-50%); }
+    .inv-gal-vbtn.next { right: clamp(.5rem, 2vw, 1.5rem); top: 50%; transform: translateY(-50%); }
+    .inv-gal-vbtn.prev:hover, .inv-gal-vbtn.next:hover { transform: translateY(-50%) scale(1.06); }
+    .inv-gal-count {
+      position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,.75);
+      font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+      font-family: var(--font-body);
     }
 
     /* ── EXPERIÊNCIA DO INVERNO — grid sensorial ── */
@@ -614,23 +914,40 @@
       aspect-ratio: 4 / 3;
       position: relative;
       overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform .8s var(--ease);
     }
-    .inv-room .ph::before {
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(160deg, #1a4922 0%, #5b7a3d 50%, #d8e3c8 100%);
-    }
-    .inv-room.r2 .ph::before { background: linear-gradient(160deg, #1f2a16 0%, #4a6b32 50%, #eaf1e2 100%); }
-    .inv-room.r3 .ph::before { background: linear-gradient(160deg, #233e1d 0%, #6b8a55 50%, #ffffff 100%); }
-    .inv-room.r4 .ph::before { background: linear-gradient(160deg, #2a3a1f 0%, #5b7a3d 50%, #e8efd8 100%); }
+    .inv-room:hover .ph { transform: scale(1.04); }
+    .inv-room.r1 .ph { background-image: url('../assets/img/quartos/chale-spa-dia.jpg'); }
+    .inv-room.r2 .ph { background-image: url('../assets/img/quartos/chale-lagos-fachada.jpg'); }
+    .inv-room.r3 .ph { background-image: url('../assets/img/quartos/chale-poneis-fachada.jpg'); }
+    .inv-room.r4 .ph { background-image: url('../assets/img/hero/fachada-casarao.webp'); }
     .inv-room .ph::after {
       content:"";
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 30%, rgba(255,255,255,.20) 0%, transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(246,178,48,.18) 0%, transparent 50%);
-      filter: blur(10px);
+      background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.18) 100%);
     }
+    .inv-room-meta {
+      display: flex; flex-wrap: wrap; gap: .35rem .6rem;
+      margin: .9rem 0 1.1rem;
+    }
+    .inv-room-meta span {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--leaf-deep); font-weight: 600;
+      background: var(--leaf-mist); border: 1px solid var(--glass-bd);
+      padding: .3rem .55rem; border-radius: 100px;
+    }
+    .inv-room-cta {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ember); font-weight: 700; text-decoration: none;
+      border-bottom: 1px solid var(--ember);
+      padding-bottom: .15rem;
+      transition: color .3s, border-color .3s;
+    }
+    .inv-room-cta:hover { color: var(--leaf-deep); border-color: var(--leaf-deep); }
     .inv-room-body { padding: 1.8rem 1.6rem 2rem; }
     .inv-room-body .tag {
       font-size: .62rem; letter-spacing: .24em; text-transform: uppercase;
@@ -698,6 +1015,9 @@
     .inv-badge {
       display: flex; flex-direction: column; align-items: center; gap: .4rem;
       color: var(--ink-soft);
+    }
+    .inv-badge-pair {
+      display: flex; flex-direction: row; gap: 2.5rem; align-items: flex-start;
     }
     .inv-badge .n {
       font-family: var(--font-display);
@@ -815,9 +1135,8 @@
       font-weight: 500;
     }
 
-    /* ── HEADER OVERRIDE — escuro permanente nesta página ── */
-    body.inv-page .hdr, body.inv-page .mobnav { display: none !important; }
-    body.inv-page .inv-hero { padding-top: 5rem; }
+    /* ── HEADER OVERRIDE — header do site visível, ajuste de top da hero ── */
+    body.inv-page .inv-hero { padding-top: 7rem; }
 
     @media (max-width: 768px) {
       .inv-hero { min-height: 115vh; padding-top: 7rem; }
@@ -833,8 +1152,32 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6C97M4C"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Header removido: LP sem navegação e sem logo -->
-  <header class="hdr" id="hdr" hidden></header>
+  <!-- ═══ HEADER (mesmo do site, com âncoras da LP) ═══ -->
+  <header class="hdr hero-mode" id="hdr">
+    <div class="hdr-inner">
+      <a href="/" class="logo"><img src="/assets/img/logo.png" alt="Pousada Recanto dos Pôneis" class="logo-img"></a>
+      <nav class="nav">
+        <a href="#atmosfera">Atmosfera</a>
+        <a href="#acomodacoes">Acomodações</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#atmosfera">Experiências</a>
+        <a href="#depoimentos">Depoimentos</a>
+      </nav>
+      <a href="#" onclick="openBooking();return false" class="hdr-btn">Reservar</a>
+      <button class="ham" id="ham" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobnav" id="mobnav">
+    <a href="#atmosfera" onclick="closeMob()">Atmosfera</a>
+    <a href="#acomodacoes" onclick="closeMob()">Acomodações</a>
+    <a href="#galeria" onclick="closeMob()">Galeria</a>
+    <a href="#atmosfera" onclick="closeMob()">Experiências</a>
+    <a href="#depoimentos" onclick="closeMob()">Depoimentos</a>
+    <a href="#" class="btn-gold" style="margin-top:1rem" onclick="closeMob();openBooking();return false">Reservar Agora</a>
+  </div>
 
   <main class="inv">
 
@@ -850,8 +1193,8 @@
           <a href="#" onclick="openBooking();return false" class="inv-btn-ember">
             <i class="ph-thin ph-calendar-heart"></i> Reservar Estadia
           </a>
-          <a href="#experiencia" class="inv-btn-glass">
-            <i class="ph-thin ph-arrow-down"></i> Viver a experiência
+          <a href="https://wa.me/554935127136" target="_blank" rel="noopener" class="inv-btn-glass">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Reservar pelo WhatsApp
           </a>
         </div>
         <div class="inv-hero-meta">
@@ -863,8 +1206,15 @@
     </section>
 
     <!-- ═══ 4 PLACEHOLDERS DE ATMOSFERA ═══ -->
-    <section class="inv-poetic">
-      <div class="inv-mood-grid">
+    <section class="inv-poetic" id="atmosfera">
+      <header class="inv-mood-head">
+        <span class="eyebrow">Serra Catarinense</span>
+        <h2>Viva um inverno <em>inesquecível</em></h2>
+      </header>
+      <div class="inv-mood-wrap">
+        <button class="inv-mood-arrow prev" type="button" aria-label="Anterior" onclick="invMoodScroll(-1)"><i class="ph-thin ph-arrow-left"></i></button>
+        <button class="inv-mood-arrow next" type="button" aria-label="Próximo" onclick="invMoodScroll(1)"><i class="ph-thin ph-arrow-right"></i></button>
+      <div class="inv-mood-grid" id="invMoodGrid">
         <figure class="inv-mood m1">
           <div class="inv-mood-ph"></div>
           <figcaption>
@@ -893,195 +1243,47 @@
             <h3>Geada</h3>
           </figcaption>
         </figure>
-      </div>
-    </section>
-
-    <!-- ═══ GALERIA DE ATMOSFERA ═══ -->
-    <section class="inv-sec inv-gallery-bg">
-      <div class="inv-wrap">
-        <div class="inv-sec-head inv-c">
-          <span class="inv-eyebrow">Galeria</span>
-          <h2 class="inv-h2">Viva um inverno de<br>paisagens inesquecíveis</h2>
-        </div>
-        <div class="inv-gallery">
-          <figure class="inv-g g1"><div class="ph"></div></figure>
-          <figure class="inv-g g2"><div class="ph"></div></figure>
-          <figure class="inv-g g3"><div class="ph"></div></figure>
-          <figure class="inv-g g4"><div class="ph"></div></figure>
-          <figure class="inv-g g5"><div class="ph"></div></figure>
-          <figure class="inv-g g6"><div class="ph"></div></figure>
-          <figure class="inv-g g7"><div class="ph"></div></figure>
-          <figure class="inv-g g8"><div class="ph"></div></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EXPERIÊNCIA DO INVERNO ═══ -->
-    <section class="inv-sec inv-exp-bg" id="experiencia">
-      <div class="inv-wrap">
-        <div class="inv-sec-head inv-c">
-          <span class="inv-eyebrow">Experiência sensorial</span>
-          <h2 class="inv-h2">O inverno que só a serra entrega</h2>
-          <p class="inv-lead">Cada manhã começa com a paisagem coberta de geada. Cada noite termina diante da lareira, com o céu mais limpo do Brasil sobre a sua cabeça.</p>
-        </div>
-
-        <div class="inv-sense-grid">
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-snowflake"></i></div>
-            <span class="stat">-8°</span>
-            <h3>Geadas intensas</h3>
-            <p>Paisagens congeladas ao amanhecer, gramado branco e ar cristalino — a Serra Catarinense é a região mais fria do Brasil.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-cloud-snow"></i></div>
-            <span class="stat">Neve</span>
-            <h3>Quando o Brasil vira inverno</h3>
-            <p>Em julho e agosto, Urubici e Urupema registram queda de neve quase todos os anos. Uma raridade que vale a viagem.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-fire"></i></div>
-            <span class="stat">Lareira</span>
-            <h3>Calor que aconchega</h3>
-            <p>Lareira acesa em cada chalé. Vinho, manta, e o som dos gravetos crepitando enquanto a serra dorme lá fora.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-star"></i></div>
-            <span class="stat">∞</span>
+        <figure class="inv-mood m5">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-star"></i></span>
             <h3>Céu estrelado</h3>
-            <p>Urubici tem um dos céus mais limpos do hemisfério sul. À noite, a via láctea aparece a olho nu sobre as araucárias.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-wine"></i></div>
-            <span class="stat">∙</span>
-            <h3>Vinho & gastronomia</h3>
-            <p>Tábua de queijos serranos, vinhos da região, sopas e fondues — o frio convida a comer devagar, em boa companhia.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-tree-evergreen"></i></div>
-            <span class="stat">Silêncio</span>
-            <h3>Natureza profunda</h3>
-            <p>Araucárias centenárias, mata atlântica de altitude e o silêncio raro de um lugar que ainda preserva o tempo lento da serra.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-sun-horizon"></i></div>
-            <span class="stat">5h45</span>
-            <h3>Amanhecer congelado</h3>
-            <p>O nascer do sol sobre a geada é um espetáculo de luz dourada cortando o branco — pode acreditar, vale o despertar cedo.</p>
-          </div>
-          <div class="inv-sense">
-            <div class="ico"><i class="ph-thin ph-coffee"></i></div>
-            <span class="stat">Café</span>
-            <h3>Manhãs lentas</h3>
-            <p>Café passado na hora, pão caseiro e a janela do chalé como moldura para um cenário que parece pintura.</p>
-          </div>
-        </div>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m6">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-mountains"></i></span>
+            <h3>Paisagens</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m7">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-sun-horizon"></i></span>
+            <h3>Visuais únicos</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m8">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-cooking-pot"></i></span>
+            <h3>Fondue</h3>
+          </figcaption>
+        </figure>
+        <figure class="inv-mood m9">
+          <div class="inv-mood-ph"></div>
+          <figcaption>
+            <span class="ico"><i class="ph-thin ph-thermometer-cold"></i></span>
+            <h3>Temperaturas negativas</h3>
+          </figcaption>
+        </figure>
       </div>
-    </section>
-
-    <!-- ═══ O QUE TORNA ÚNICO ═══ -->
-    <section class="inv-sec inv-unique-bg">
-      <div class="inv-wrap">
-        <div class="inv-sec-head inv-c">
-          <span class="inv-eyebrow">Luxo silencioso</span>
-          <h2 class="inv-h2">Não é apenas hospedagem.<br>É um refúgio.</h2>
-          <p class="inv-lead">Tudo aqui foi pensado para que o inverno deixe de ser estação e vire memória — íntima, particular, sua.</p>
-        </div>
-
-        <div class="inv-unique-grid">
-          <div class="inv-u">
-            <div class="num">01</div>
-            <h3>Localização rara</h3>
-            <p>No coração da Serra Catarinense, entre Urubici e Urupema — as duas cidades mais frias do Brasil.</p>
-          </div>
-          <div class="inv-u">
-            <div class="num">02</div>
-            <h3>Privacidade absoluta</h3>
-            <p>Chalés afastados, sem vizinhos colados. Só você, sua família e o vento entre as araucárias.</p>
-          </div>
-          <div class="inv-u">
-            <div class="num">03</div>
-            <h3>Conforto rural</h3>
-            <p>Lareira, cozinha completa, churrasqueira e tudo que torna ficar dentro tão bom quanto sair.</p>
-          </div>
-          <div class="inv-u">
-            <div class="num">04</div>
-            <h3>Experiências inclusas</h3>
-            <p>Passeios a cavalo, contato com os pôneis e a vida do campo já fazem parte da sua diária.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EXPERIÊNCIAS DA REGIÃO ═══ -->
-    <section class="inv-sec inv-region-bg">
-      <div class="inv-wrap">
-        <div class="inv-sec-head inv-c">
-          <span class="inv-eyebrow">Roteiro do frio</span>
-          <h2 class="inv-h2">Tudo o que a serra<br>tem de mais belo, perto.</h2>
-          <p class="inv-lead">Da pousada, você está a poucos minutos dos cartões-postais mais cobiçados do inverno brasileiro.</p>
-        </div>
-
-        <div class="inv-region-grid">
-          <article class="inv-place p1">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Urubici · 50min</span>
-              <h3>Morro da Igreja</h3>
-              <p>O ponto habitado mais alto do sul do Brasil, com a icônica Pedra Furada e mínimas que chegam aos -10°C.</p>
-            </div>
-          </article>
-          <article class="inv-place p2">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Urubici · 35min</span>
-              <h3>Serra do Corvo Branco</h3>
-              <p>Cânion esculpido na pedra, paredões de 100 metros e, no inverno, paredes de gelo escorrendo pelas encostas.</p>
-            </div>
-          </article>
-          <article class="inv-place p3">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Urupema · 25min</span>
-              <h3>Cascatas Congeladas</h3>
-              <p>Em dias muito frios, as quedas d'água da região se transformam em esculturas de gelo — espetáculo raríssimo no Brasil.</p>
-            </div>
-          </article>
-          <article class="inv-place p4">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Urupema · 30min</span>
-              <h3>Mirante da Serra do Pinhal</h3>
-              <p>Vista 360° das araucárias cobertas de geada ao nascer do sol. Um dos amanheceres mais bonitos da serra.</p>
-            </div>
-          </article>
-          <article class="inv-place p5">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Urubici · 45min</span>
-              <h3>Cânion do Espraiado</h3>
-              <p>Trilha leve até um cânion verde profundo. Casais costumam vir aqui pelo silêncio absoluto da mata de altitude.</p>
-            </div>
-          </article>
-          <article class="inv-place p6">
-            <div class="ph-bg"></div>
-            <div class="ph-mist"></div>
-            <div class="inv-place-body">
-              <span class="tag">Região · próximo</span>
-              <h3>Vinícolas & cervejarias</h3>
-              <p>Vinhos de altitude e cervejas artesanais produzidas na própria serra — uma rota gastronômica entre as montanhas.</p>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
     <!-- ═══ ACOMODAÇÕES ═══ -->
-    <section class="inv-sec inv-rooms-bg">
+    <section class="inv-sec inv-rooms-bg" id="acomodacoes">
       <div class="inv-wrap">
         <div class="inv-sec-head inv-c">
           <span class="inv-eyebrow">Onde você vai dormir</span>
@@ -1091,47 +1293,103 @@
 
         <div class="inv-rooms-grid">
           <article class="inv-room r1">
-            <div class="ph"></div>
+            <div class="ph" role="img" aria-label="Chalé Spa Sunset — fachada em madeira rústica entre araucárias"></div>
             <div class="inv-room-body">
-              <span class="tag">Para casais</span>
+              <span class="tag">Para casais · 100m²</span>
               <h3>Chalé Spa Sunset</h3>
-              <p>Refúgio romântico com hidromassagem privativa e vista para o pôr do sol sobre a serra.</p>
+              <p>Refúgio romântico em madeira canadense com hidromassagem com cromoterapia, lareira acesa e cama Queen com dossel diante do pôr do sol da serra.</p>
+              <div class="inv-room-meta">
+                <span>Hidromassagem</span><span>Lareira</span><span>Mezanino</span><span>Netflix</span>
+              </div>
+              <a href="https://reservas.recantodosponeis.com.br/acomodacao/chale-spa-sunset/7706384" target="_blank" rel="noopener" class="inv-room-cta">Ver disponibilidade <i class="ph-thin ph-arrow-right"></i></a>
             </div>
           </article>
           <article class="inv-room r2">
-            <div class="ph"></div>
+            <div class="ph" role="img" aria-label="Chalé dos Lagos — fachada com vista para o lago"></div>
             <div class="inv-room-body">
-              <span class="tag">Para famílias</span>
+              <span class="tag">Para 2 famílias · até 6</span>
               <h3>Chalé dos Lagos</h3>
-              <p>Acolhedor e amplo, com vista direta para o lago — pesca e cavalgadas a poucos passos.</p>
+              <p>Vista direta para o lago, deck para contemplar o entardecer, dois quartos com ar-condicionado, lareira e fogão a lenha — perfeito para duas famílias.</p>
+              <div class="inv-room-meta">
+                <span>Vista lago</span><span>Lareira</span><span>2 quartos</span><span>Fogão a lenha</span>
+              </div>
+              <a href="https://reservas.recantodosponeis.com.br/acomodacao/chale-dos-lagos/7706391" target="_blank" rel="noopener" class="inv-room-cta">Ver disponibilidade <i class="ph-thin ph-arrow-right"></i></a>
             </div>
           </article>
           <article class="inv-room r3">
-            <div class="ph"></div>
+            <div class="ph" role="img" aria-label="Chalé dos Pôneis — fachada com campo de pôneis na frente"></div>
             <div class="inv-room-body">
-              <span class="tag">Para famílias</span>
+              <span class="tag">Para 2 famílias · até 6</span>
               <h3>Chalé dos Pôneis</h3>
-              <p>O preferido das crianças, com os pôneis pastando no terreiro da frente.</p>
+              <p>Pôneis e cavalos livres no campo gramado da frente. Dois quartos, lareira, fogão a lenha e o quintal preferido das crianças, com gangorra e contato direto com os animais.</p>
+              <div class="inv-room-meta">
+                <span>Campo com pôneis</span><span>Lareira</span><span>2 quartos</span><span>Fogão a lenha</span>
+              </div>
+              <a href="https://reservas.recantodosponeis.com.br/acomodacao/chale-dos-poneis/7706387" target="_blank" rel="noopener" class="inv-room-cta">Ver disponibilidade <i class="ph-thin ph-arrow-right"></i></a>
             </div>
           </article>
           <article class="inv-room r4">
-            <div class="ph"></div>
+            <div class="ph" role="img" aria-label="Casarão — fachada da casa principal para grupos"></div>
             <div class="inv-room-body">
               <span class="tag">Para grupos · até 12</span>
               <h3>Casarão</h3>
-              <p>Para reunir a família ou os amigos inteiros — espaço, lareira e mesa farta.</p>
+              <p>Para reunir a família inteira ou os amigos. Três quartos com ar-condicionado, sala de jogos com sinuca e pebolim, lareira, fogão a lenha e mesa farta para noites memoráveis.</p>
+              <div class="inv-room-meta">
+                <span>3 quartos</span><span>Lareira</span><span>Sinuca · Pebolim</span><span>Até 12 pessoas</span>
+              </div>
+              <a href="https://reservas.recantodosponeis.com.br/acomodacao/casarao/7706390" target="_blank" rel="noopener" class="inv-room-cta">Ver disponibilidade <i class="ph-thin ph-arrow-right"></i></a>
             </div>
           </article>
         </div>
 
-        <div style="text-align:center;margin-top:3.5rem">
-          <a href="../acomodacoes/" class="inv-btn-glass"><i class="ph-thin ph-arrow-right"></i> Ver todas as acomodações</a>
+      </div>
+    </section>
+
+    <!-- ═══ GALERIA DE ATMOSFERA ═══ -->
+    <section class="inv-sec inv-gallery-bg" id="galeria">
+      <div class="inv-wrap">
+        <div class="inv-sec-head inv-c">
+          <span class="inv-eyebrow">Galeria</span>
+          <h2 class="inv-h2">A pousada em <em>imagens</em></h2>
+        </div>
+        <div class="inv-gallery">
+          <figure class="inv-g g1"><div class="ph"></div></figure>
+          <figure class="inv-g g2"><div class="ph"></div></figure>
+          <figure class="inv-g g3"><div class="ph"></div></figure>
+          <figure class="inv-g g4"><div class="ph"></div></figure>
+          <figure class="inv-g g5"><div class="ph"></div></figure>
+          <figure class="inv-g g6"><div class="ph"></div></figure>
+          <figure class="inv-g g7"><div class="ph"></div></figure>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem">
+          <button type="button" class="inv-btn-glass" onclick="invGalOpen()"><i class="ph-thin ph-frame-corners"></i> Expandir galeria de inverno</button>
         </div>
       </div>
     </section>
 
+    <!-- ═══ POPUP GALERIA COMPLETA ═══ -->
+    <div class="inv-gal-modal" id="invGalModal" aria-hidden="true">
+      <div class="inv-gal-backdrop" onclick="invGalClose()"></div>
+      <button type="button" class="inv-gal-close" aria-label="Fechar galeria" onclick="invGalClose()"><i class="ph-thin ph-x"></i></button>
+      <div class="inv-gal-content">
+        <header class="inv-gal-head">
+          <span class="eyebrow">Galeria · Inverno</span>
+          <h3>Paisagens da Serra Catarinense</h3>
+        </header>
+        <div class="inv-gal-grid" id="invGalGrid"></div>
+      </div>
+      <div class="inv-gal-viewer" id="invGalViewer" aria-hidden="true">
+        <button type="button" class="inv-gal-vbtn close" aria-label="Voltar à grade" onclick="invGalViewerClose()"><i class="ph-thin ph-x"></i></button>
+        <button type="button" class="inv-gal-vbtn prev" aria-label="Anterior" onclick="invGalNav(-1)"><i class="ph-thin ph-arrow-left"></i></button>
+        <button type="button" class="inv-gal-vbtn next" aria-label="Próxima" onclick="invGalNav(1)"><i class="ph-thin ph-arrow-right"></i></button>
+        <img id="invGalViewerImg" alt="">
+        <span class="inv-gal-count" id="invGalCount"></span>
+      </div>
+    </div>
+
+
     <!-- ═══ PROVA SOCIAL ═══ -->
-    <section class="inv-sec inv-social-bg">
+    <section class="inv-sec inv-social-bg" id="depoimentos">
       <div class="inv-wrap">
         <div class="inv-sec-head inv-c">
           <span class="inv-eyebrow">Quem já viveu</span>
@@ -1141,52 +1399,35 @@
         <div class="inv-testi-grid">
           <article class="inv-testi">
             <div class="stars">★ ★ ★ ★ ★</div>
-            <blockquote>“Acordamos com a serra branca de geada. Foi a viagem mais bonita que minha família já fez. Vamos voltar todo inverno.”</blockquote>
+            <blockquote>“Ótima experiência em família. A pousada é muito agradável, as cabanas são limpas e há muitas atividades para se fazer. Vale muito passar uns dias com a família.”</blockquote>
             <div class="who">
-              <div class="avatar"></div>
-              <div class="who-info"><strong>Família Becker</strong><span>Blumenau · SC</span></div>
+<div class="who-info"><strong>barcelosperez</strong><span>Porto Alegre · RS</span></div>
             </div>
           </article>
           <article class="inv-testi">
             <div class="stars">★ ★ ★ ★ ★</div>
-            <blockquote>“A lareira acesa, o silêncio, o vinho. Um lugar que recebe a gente como amigo, não como cliente.”</blockquote>
+            <blockquote>“A Cabana Spa Sunset é uma opção inigualável para quem busca descanso. Qualidade, sofisticação e a gentileza e sensibilidade dos proprietários fazem toda a diferença.”</blockquote>
             <div class="who">
-              <div class="avatar"></div>
-              <div class="who-info"><strong>Marcela & Henrique</strong><span>Porto Alegre · RS</span></div>
+<div class="who-info"><strong>Alvaro Mouawad</strong><span>Porto Alegre · RS</span></div>
             </div>
           </article>
           <article class="inv-testi">
             <div class="stars">★ ★ ★ ★ ★</div>
-            <blockquote>“Nevou na nossa estadia. As crianças nunca tinham visto neve. Memória para a vida inteira.”</blockquote>
+            <blockquote>“Chalé muito tranquilo e aconchegante, com cozinha de fogão a lenha e lareira. Atenção dos caseiros e proprietários é um destaque — voltaremos com certeza.”</blockquote>
             <div class="who">
-              <div class="avatar"></div>
-              <div class="who-info"><strong>Família Sant'Anna</strong><span>Florianópolis · SC</span></div>
+<div class="who-info"><strong>Luciano Antonio Costa</strong><span>Florianópolis · SC</span></div>
             </div>
           </article>
         </div>
 
         <div class="inv-badges">
           <div class="inv-badge"><span class="n">4.9</span><span class="l">Google · 200+ avaliações</span></div>
-          <div class="inv-badge"><span class="n">9.6</span><span class="l">Booking · Excepcional</span></div>
-          <div class="inv-badge"><span class="n">8 anos</span><span class="l">Recebendo hóspedes</span></div>
+          <div class="inv-badge-pair">
+            <div class="inv-badge"><span class="n">9.6</span><span class="l">Booking · Excepcional</span></div>
+            <div class="inv-badge"><span class="n">9 anos</span><span class="l">Recebendo hóspedes</span></div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- ═══ ESCASSEZ ═══ -->
-    <section class="inv-scarcity">
-      <span class="label"><span class="dot"></span> Temporada de alta procura</span>
-      <h2>Datas de inverno se esgotam<br>rápido a cada ano.</h2>
-      <p>Julho e agosto — quando as geadas e a possibilidade de neve são máximas — costumam ficar sem disponibilidade já em maio. Garanta a sua agora.</p>
-      <div class="inv-months">
-        <span class="inv-month">Junho</span>
-        <span class="inv-month hot">Julho</span>
-        <span class="inv-month hot">Agosto</span>
-        <span class="inv-month">Setembro</span>
-      </div>
-      <a href="#" onclick="openBooking();return false" class="inv-btn-ember">
-        <i class="ph-thin ph-calendar-check"></i> Verificar disponibilidade
-      </a>
     </section>
 
     <!-- ═══ CTA FINAL ═══ -->
@@ -1271,6 +1512,106 @@
   <script src="../assets/js/main.js"></script>
 
   <script>
+    // ── Galeria de inverno: popup com 66 fotos + viewer ──
+    (function(){
+      const TOTAL = 66;
+      const modal = document.getElementById('invGalModal');
+      const grid = document.getElementById('invGalGrid');
+      const viewer = document.getElementById('invGalViewer');
+      const vImg = document.getElementById('invGalViewerImg');
+      const vCount = document.getElementById('invGalCount');
+      if (!modal || !grid) return;
+
+      const srcs = [];
+      for (let i = 1; i <= TOTAL; i++){
+        const n = String(i).padStart(2, '0');
+        srcs.push('../assets/img/inverno/galeria-full/full-' + n + '.jpg');
+      }
+      let current = 0;
+      let built = false;
+
+      function buildGrid(){
+        if (built) return;
+        srcs.forEach((src, idx) => {
+          const t = document.createElement('div');
+          t.className = 'inv-gal-thumb';
+          t.style.backgroundImage = "url('" + src + "')";
+          t.setAttribute('role', 'button');
+          t.setAttribute('tabindex', '0');
+          t.setAttribute('aria-label', 'Foto ' + (idx + 1) + ' de ' + TOTAL);
+          t.addEventListener('click', () => openViewer(idx));
+          t.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openViewer(idx); } });
+          grid.appendChild(t);
+        });
+        built = true;
+      }
+      function openViewer(idx){
+        current = idx;
+        vImg.src = srcs[idx];
+        vCount.textContent = (idx + 1) + ' / ' + TOTAL;
+        viewer.classList.add('open');
+        viewer.setAttribute('aria-hidden', 'false');
+      }
+      window.invGalViewerClose = function(){
+        viewer.classList.remove('open');
+        viewer.setAttribute('aria-hidden', 'true');
+        vImg.src = '';
+      };
+      window.invGalNav = function(dir){
+        current = (current + dir + TOTAL) % TOTAL;
+        vImg.src = srcs[current];
+        vCount.textContent = (current + 1) + ' / ' + TOTAL;
+      };
+      window.invGalOpen = function(){
+        buildGrid();
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      window.invGalClose = function(){
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        window.invGalViewerClose();
+      };
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('open')) return;
+        if (e.key === 'Escape'){
+          if (viewer.classList.contains('open')) window.invGalViewerClose();
+          else window.invGalClose();
+        } else if (viewer.classList.contains('open')){
+          if (e.key === 'ArrowLeft') window.invGalNav(-1);
+          else if (e.key === 'ArrowRight') window.invGalNav(1);
+        }
+      });
+    })();
+
+    // ── Carrossel de atmosfera: setas + estado disabled ──
+    (function(){
+      const grid = document.getElementById('invMoodGrid');
+      if (!grid) return;
+      const prev = document.querySelector('.inv-mood-arrow.prev');
+      const next = document.querySelector('.inv-mood-arrow.next');
+      function step(){
+        const card = grid.querySelector('.inv-mood');
+        if (!card) return 320;
+        const gap = parseFloat(getComputedStyle(grid).columnGap || getComputedStyle(grid).gap) || 16;
+        return card.getBoundingClientRect().width + gap;
+      }
+      window.invMoodScroll = function(dir){
+        grid.scrollBy({ left: dir * step(), behavior: 'smooth' });
+      };
+      function updateButtons(){
+        if (!prev || !next) return;
+        const max = grid.scrollWidth - grid.clientWidth - 2;
+        prev.disabled = grid.scrollLeft <= 2;
+        next.disabled = grid.scrollLeft >= max;
+      }
+      grid.addEventListener('scroll', updateButtons, { passive: true });
+      window.addEventListener('resize', updateButtons);
+      updateButtons();
+    })();
+
     // ── Neve caindo no hero (procedural, sem libs) ──
     (function(){
       const layer = document.getElementById('invSnow');
