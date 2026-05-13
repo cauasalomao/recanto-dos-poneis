@@ -325,7 +325,7 @@ img.loaded { opacity:1; }
 /* ── MODAL DE RESERVA (Foco Multimídia) ── */
 .bk-modal { position:fixed; inset:0; z-index:9500; background:rgba(0,0,0,.55); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transition:all .3s var(--ease); padding:1rem; }
 .bk-modal.open { opacity:1; visibility:visible; }
-.bk-modal-box { background:var(--surface); max-width:480px; width:100%; border-radius:12px; overflow:hidden; position:relative; box-shadow:var(--shadow-lg); animation:bkSlideUp .35s var(--ease); }
+.bk-modal-box { background:var(--surface); max-width:480px; width:100%; max-height:calc(100vh - 2rem); border-radius:12px; overflow-y:auto; overflow-x:hidden; position:relative; box-shadow:var(--shadow-lg); animation:bkSlideUp .35s var(--ease); -webkit-overflow-scrolling:touch; }
 @keyframes bkSlideUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
 .bk-close { position:absolute; top:1rem; right:1rem; background:var(--surface-light); border:none; width:36px; height:36px; border-radius:50%; font-size:1.4rem; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center; line-height:1; color:var(--text); transition:background .2s; }
 .bk-close:hover { background:var(--border); }
@@ -339,7 +339,8 @@ img.loaded { opacity:1; }
 .bk-form label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); }
 .bk-form input, .bk-form select { padding:.7rem .8rem; border:1px solid var(--border); border-radius:6px; font-size:.9rem; font-family:var(--font-body); background:var(--bg); min-height:44px; color:var(--text); transition:border-color .2s; outline:none; }
 .bk-form input:focus, .bk-form select:focus { border-color:var(--accent); }
-.bk-child-ages { display:grid; grid-template-columns:repeat(auto-fill, minmax(110px, 1fr)); gap:.8rem; margin-bottom:.8rem; }
+.bk-child-ages { display:grid; grid-template-columns:repeat(auto-fill, minmax(95px, 1fr)); gap:.6rem; margin-bottom:.8rem; max-width:100%; }
+.bk-form input, .bk-form select { max-width:100%; box-sizing:border-box; }
 .bk-child-ages .fg { display:flex; flex-direction:column; gap:.3rem; }
 .bk-child-ages label { font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); }
 .bk-child-ages select { padding:.6rem .7rem; border:1px solid var(--border); border-radius:6px; font-size:.88rem; font-family:var(--font-body); background:var(--bg); min-height:42px; }
